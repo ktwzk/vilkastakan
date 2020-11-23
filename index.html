@@ -23,7 +23,7 @@
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <link rel="manifest" href="/site.webmanifest">
         <meta name="msapplication-TileColor" content="#000000">
-    <script type="text/javascript" src="glsl.js"></script>
+    <script src="https://rawcdn.githack.com/strangerintheq/rgba/0.0.5/rgba.js"></script>
      <script type="application/ld+json">
         { "@context" : "http://schema.org",
           "@type" : "Person",
@@ -114,19 +114,57 @@ a:visited {
     <p><span>contact: <a href="mailto:v@views.rocks">v@views.rocks</a> (gpg at keybase <a href="https://keybase.io/ktwzk">@ktwzk</a>), tlg&nbsp;<a href="https://t.me/ktwzk">@ktwzk</a>, discord&nbsp;<a href="https://discord.gg/dEaF3Ys">вилкастакан#1312</a></span></p>
     <p><span>donate: <a href="https://donate.stream/en/vilkastakan">donate.stream</a>, <a href="https://rocketbank.ru/ktwzk">rocketbank</a></span></p>
   </div>
-    <canvas
-      class="glsl-canvas"
-      data-fragment-url="./fragment.glsl"
-    ></canvas>
+    
   </body>
   <script>
-    var options = {
-      antialias: true,
-      extensions: [],
-    };
-    var canvas = document.querySelector(".glsl-canvas");
-    var glsl = new glsl.Canvas(canvas, options);
-    glsl.setUniforms({});
+    RGBA(`
+    float ch(vec2 uv, float k) {
+        k = sin(k);
+        float w;
+        w += sin((uv.x*0.7 + r*0.8 + k) * 23.0 )*0.03;
+        w += sin((uv.x*0.4 + time*0.03 + k) * 33.0 )*0.05;
+        w += sin((uv.x*0.6 - g*0.9 + k) * 43.0 )*0.03;
+        w += sin((uv.y + r)*3.0);
+        return smoothstep(0.00, 0.005, w) - smoothstep(0.2+k*0.1, 0.2+k*0.11, length(uv));
+    }
+
+
+    void main() {
+        vec2 uv = gl_FragCoord.xy/resolution - 0.5;
+        uv.x *= resolution.x/resolution.y;
+        gl_FragColor = vec4(ch(uv, r), ch(uv, g), ch(uv, b), 1.);
+    }
+`, {
+  //  record: true,
+    uniforms: {
+        r: scroller(0.1),
+        g: scroller(0.12),
+        b: scroller(0.18)
+    }
+});
+
+function scroller(k) {
+    
+    let value = 0;
+    let target = 0;
+    let touchStartValue;
+    let touchStartY;
+
+    addEventListener('mousemove', (e) => {
+        target = e.offsetX*0.001 + e.offsetY*0.001;
+    });
+
+    addEventListener('touchstart', (e) => {
+        touchStartValue = value;
+        touchStartY = e.touches[0].clientY;
+    });
+
+    addEventListener('touchmove', (e) => {
+        target = touchStartValue - (e.touches[0].clientY - touchStartY)*0.01;
+    });
+
+    return (t) => value += (target - value)*k;
+};
   </script>
   <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >

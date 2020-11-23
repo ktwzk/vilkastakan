@@ -132,7 +132,7 @@ a:visited {
     void main() {
         vec2 uv = gl_FragCoord.xy/resolution - 0.5;
         uv.x *= resolution.x/resolution.y;
-        gl_FragColor = vec4(ch(uv, r), ch(uv, g), ch(uv, b), 1.);
+        gl_FragColor = vec4(0.5*ch(uv, r), ch(uv, g), 0.5*ch(uv, b), 1.);
     }
 `, {
   //  record: true,

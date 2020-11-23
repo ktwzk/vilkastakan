@@ -1,6 +1,6 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "\u0432\u0438\u043b\u043a\u0430 \u0441\u0442\u0430\u043a\u0430\u043d",
+    "short_name": "\u0432\u0438\u043b\u043a\u0430 \u0441\u0442\u0430\u043a\u0430\u043d",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -13,6 +13,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#0e0e0e",
-    "background_color": "#0e0e0e"
+    "theme_color": "#000000",
+    "background_color": "#000000",
+    "display": "standalone"
 }

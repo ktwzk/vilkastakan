@@ -115,6 +115,7 @@ a:visited {
     <h1><span><b>вилка стакан</b></span></h1>
       <p><span><b>coder, designer, event-manager, shitposter, <i>new&nbsp;media&nbsp;art&nbsp;hustler</i></b>,<br>creator @ <a href="https://views.rocks">ВЬЮС</a> gang, producer @ <a href="https://hackerdom.ru">Хакердом</a>, avaliable for&nbsp;hire</span></p>
     <p><span>vilka stakan (rus.&nbsp;“вилка&nbsp;стакан”) can be&nbsp;translated as&nbsp;“plug glass”.<br>plug for my&nbsp;laptop and a&nbsp;glass of&nbsp;water for&nbsp;me&nbsp;to&nbsp;stay&nbsp;hydrated</span></p><p><span>my real name is Викентий Котвицкий, but you can call&nbsp;me&nbsp;Vik</span></p>
+      <p><span>now playing: <span id="spotify">fetching...</span></span></p>
     <p><span>follow/like: <a href="https://twitter.com/vilkastakan">twitter</a>, <a href="https://instagram.com/vilkastakan">instagram</a>, <a href="https://github.com/ktwzk">github</a>, <a href="https://behance.net/vilkastakan">behance</a>, <a href="https://glitch.com/@vilkastakan">glitch</a></span></p>
       <p><span>listen to: <a href="https://soundcloud.com/vilkastakan/folders_m3u">folders.m3u</a>, <a href="https://open.spotify.com/user/n5xe7xa9ygnl8o1mta2cg7yy9?si=RpSiNyYmRcihYmhXckTaFg">spotify&nbsp;playlists</a>, <a href="https://mixcloud.com/vilkastakan">mixcloud</a>, <a href="https://soundcloud.com/vilkastakan">soundcloud</a></span></p>
     <p><span>contact: <a href="mailto:vilkastakan@hot.ee">vilkastakan@hot.ee</a>, tlg&nbsp;<a href="https://t.me/ktwzk">@ktwzk</a>, discord&nbsp;<a href="https://discord.gg/dEaF3Ys">вилкастакан#1312</a></span></p>
@@ -123,6 +124,12 @@ a:visited {
     
   </body>
   <script>
+    fetch(
+  'https://spotify-now-playing.glitch.me/'
+).then(response => response.text())
+  .then(text => document.getElementById("spotify").innerHTML = text);
+    
+    
     RGBA(`
     float ch(vec2 uv, float k) {
         k = sin(k);

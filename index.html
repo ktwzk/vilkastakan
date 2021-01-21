@@ -128,7 +128,7 @@ a:visited {
     
     const spotify = (text) => {
       if (text=='paused') {document.getElementById("spotify-paragraph").outerHTML = "";}
-      else {document.getElementById("spotify-paragraph").innerHTML = "<p><span>now playing on Spotify: <span id="spotify">" + text + "</span></span></p>"}
+      else {document.getElementById("spotify-paragraph").innerHTML = '<p><span>now playing on Spotify: <span id="spotify">' + text + '</span></span></p>'}
     };
     
     fetch(

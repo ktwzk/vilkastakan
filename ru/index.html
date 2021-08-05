@@ -50,19 +50,11 @@
         }
         </script>
     <style>
-
-      @font-face {
-  font-family: 'GolosTextWebVF';
-  src: url('https://views.rocks/fonts/golos/Golos%20Text_VF.EOT');
-  src:
-       url('https://views.rocks/fonts/golos/Golos%20Text_VF.EOT?#iefix') format('embedded-opentype'),
-       url('https://views.rocks/fonts/golos/Golos%20Text_VF.WOFF2') format('woff2'),
-       url('https://views.rocks/fonts/golos/Golos%20Text_VF.WOFF') format('woff'),
-       url('https://views.rocks/fonts/golos/Golos%20Text_VF.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+@import url('https://rsms.me/inter/inter.css');
+html { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter var', sans-serif; }
 }
-
       .bio {
         position: absolute;
         top: 4%;
@@ -75,7 +67,7 @@
 }
 
 body {
-  font-family: 'GolosTextWebVF', sans-serif;
+  font-family: 'Inter', sans-serif;
   display: flex;
   margin: 0;
   background: #000;
@@ -104,7 +96,6 @@ a:hover{
 a:visited {
   color: white;
 }
-
 
 
     </style>

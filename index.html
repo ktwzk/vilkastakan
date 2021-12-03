@@ -184,6 +184,15 @@ void main() {
     }
 });
 
+function regenerate() {
+    rgba.handleSize();
+    rgba.drawCall(777777*Math.random());
+}
+
+addEventListener('click', regenerate)
+
+regenerate()
+
 function scroller(k) {
     
     let value = 0;

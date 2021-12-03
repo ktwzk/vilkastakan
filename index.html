@@ -168,7 +168,7 @@ void main() {
             pow(c, 1.01 + sin(l-time)),
             c,
             pow(c, 1.01 + cos(time+l))
-        ) * 0.02;
+        ) * 0.002;
 
     }
 
@@ -190,6 +190,10 @@ function regenerate() {
 }
 
 addEventListener('click', regenerate)
+
+let timerId = setInterval(regenerate, 6000);
+
+setTimeout(() => { clearInterval(timerId);}, 600000);
 
 regenerate()
   </script>

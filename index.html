@@ -128,9 +128,9 @@ a:visited {
 ).then(response => response.text())
   .then(text => spotify(text));
     
-    
-    RGBA(`
-    
+// shader by https://codepen.io/strangerintheq
+const rgba = new RGBA(`
+
 float rand(float n){return fract(sin(n) * 43758.5453123);}
 
 float noise(float p){
@@ -140,8 +140,8 @@ float noise(float p){
 
 float map(in vec3 p) {
 
-    float n = noise(p.z*g*4.)*g;
-    float v = abs(p.x+n) + abs(p.z-n) - 3. + g ;
+    float n = noise(p.z*nn*4.)*nn;
+    float v = abs(p.x+n) + abs(p.z-n) - 3. + nn ;
     v += noise(p.x+p.y) + noise(p.z-p.y);
     return smoothstep(-0.1,.0, v)*0.5 - smoothstep(0.,.1, v)*0.5;
 }
@@ -150,11 +150,11 @@ void main() {
 
  
     vec2 uv = gl_FragCoord.xy;
-    uv -= resolution*(0.3+b*0.4);
+    uv -= resolution*(0.3+bb*0.4);
 
     uv = uv*mat2(cos(time*7.), sin(time*7.), -sin(time*7.), cos(time*7.));
 
-    float vp = sin(time)*r;
+    float vp = sin(time)*aa;
 
     vec3 ro = vec3(-vp, time*4.0, vp);
     vec3 rd = normalize(vec3(uv.y, resolution.y, uv.x));
@@ -168,19 +168,19 @@ void main() {
             pow(c, 1.01 + sin(l-time)),
             c,
             pow(c, 1.01 + cos(time+l))
-        ) * 0.002;
+        ) * 0.02;
 
     }
 
     gl_FragColor = vec4( clamp( gl_FragColor.rgb, 0.0, 1.0 ), 1. );
 }
-  
+   
 `, {
     loop: false,
     uniforms: {
-        r: scroller(0.1),
-        g: scroller(0.12),
-        b: scroller(0.18)
+        aa: () => Math.random(),
+        bb: () => Math.random(),
+        nn: () => Math.random()
     }
 });
 
@@ -192,29 +192,6 @@ function regenerate() {
 addEventListener('click', regenerate)
 
 regenerate()
-
-function scroller(k) {
-    
-    let value = 0;
-    let target = 0;
-    let touchStartValue;
-    let touchStartY;
-
-    addEventListener('mousemove', (e) => {
-        target = e.offsetX*0.005 + e.offsetY*0.005;
-    });
-
-    addEventListener('touchstart', (e) => {
-        touchStartValue = value;
-        touchStartY = e.touches[0].clientY;
-    });
-
-    addEventListener('touchmove', (e) => {
-        target = touchStartValue - (e.touches[0].clientY - touchStartY)*0.01;
-    });
-
-    return (t) => value += (target - value)*k;
-};
   </script>
   <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >

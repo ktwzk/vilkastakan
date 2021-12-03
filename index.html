@@ -29,7 +29,6 @@
 <meta name="msapplication-TileColor" content="#000000">
 <meta name="theme-color" content="#000000">
 <script src="https://rawcdn.githack.com/strangerintheq/rgba/0.0.10/rgba.js"></script>
-<script src="https://rawcdn.githack.com/strangerintheq/rgba/0.0.10/mouse.js"></script>
 
      <script type="application/ld+json">
         { "@context" : "http://schema.org",
@@ -168,7 +167,7 @@ void main() {
             pow(c, 1.01 + sin(l-time)),
             c,
             pow(c, 1.01 + cos(time+l))
-        ) * 0.002;
+        ) * 0.009;
 
     }
 
@@ -189,7 +188,7 @@ function regenerate() {
     rgba.drawCall(777777*Math.random());
 }
 
-addEventListener('click', regenerate)
+//addEventListener('click', regenerate)
 
 let timerId = setInterval(regenerate, 6000);
 

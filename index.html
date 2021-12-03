@@ -126,75 +126,53 @@ a:visited {
   'https://spotify-now-playing.glitch.me/'
 ).then(response => response.text())
   .then(text => spotify(text));
-    
-// shader by https://codepen.io/strangerintheq
-const rgba = new RGBA(`
-
-float rand(float n){return fract(sin(n) * 43758.5453123);}
-
-float noise(float p){
-    float fl = floor(p), fc = fract(p);
-    return mix(rand(fl), rand(fl + 1.0), fc);
-}
-
-float map(in vec3 p) {
-
-    float n = noise(p.z*nn*4.)*nn;
-    float v = abs(p.x+n) + abs(p.z-n) - 3. + nn ;
-    v += noise(p.x+p.y) + noise(p.z-p.y);
-    return smoothstep(-0.1,.0, v)*0.5 - smoothstep(0.,.1, v)*0.5;
-}
-
-void main() {
-
- 
-    vec2 uv = gl_FragCoord.xy;
-    uv -= resolution*(0.3+bb*0.4);
-
-    uv = uv*mat2(cos(time*7.), sin(time*7.), -sin(time*7.), cos(time*7.));
-
-    float vp = sin(time)*aa;
-
-    vec3 ro = vec3(-vp, time*4.0, vp);
-    vec3 rd = normalize(vec3(uv.y, resolution.y, uv.x));
-
-    for( float i=0.0; i<1024.0; i++ ) {
-        gl_FragColor = gl_FragColor;
-        vec3 p = ro + i*rd*0.01;
-        float c = map(p);
-        float l = length(p);
-        gl_FragColor.rgb += vec3(
-            pow(c, 1.01 + sin(l-time)),
-            c,
-            pow(c, 1.01 + cos(time+l))
-        ) * 0.006;
-
+      
+    RGBA(`
+    float ch(vec2 uv, float k) {
+        k = sin(k);
+        float w;
+        w += sin((uv.x*0.7 + r*0.8 + k) * 23.0 )*0.03;
+        w += sin((uv.x*0.4 + time*0.03 + k) * 33.0 )*0.05;
+        w += sin((uv.x*0.6 - g*0.9 + k) * 43.0 )*0.03;
+        w += sin((uv.y + r)*3.0);
+        return smoothstep(0.00, 0.005, w) - smoothstep(0.2+k*0.1, 0.2+k*0.11, length(uv));
     }
-
-    gl_FragColor = vec4( clamp( gl_FragColor.rgb, 0.0, 1.0 ), 1. );
-}
-   
+    void main() {
+        vec2 uv = gl_FragCoord.xy/resolution - 0.5;
+        uv.x *= resolution.x/resolution.y;
+        gl_FragColor = vec4(0.5*ch(uv, r), ch(uv, g), 0.5*ch(uv, b), 1.);
+    }
 `, {
-    loop: false,
+  //  record: true,
     uniforms: {
-        aa: () => Math.random(),
-        bb: () => Math.random(),
-        nn: () => Math.random()
+        r: scroller(0.1),
+        g: scroller(0.12),
+        b: scroller(0.18)
     }
 });
 
-function regenerate() {
-    rgba.handleSize();
-    rgba.drawCall(777777*Math.random());
-}
+function scroller(k) {
+    
+    let value = 0;
+    let target = 0;
+    let touchStartValue;
+    let touchStartY;
 
-//addEventListener('click', regenerate)
+    addEventListener('mousemove', (e) => {
+        target = e.offsetX*0.005 + e.offsetY*0.005;
+    });
 
-let timerId = setInterval(regenerate, 6000);
+    addEventListener('touchstart', (e) => {
+        touchStartValue = value;
+        touchStartY = e.touches[0].clientY;
+    });
 
-setTimeout(() => { clearInterval(timerId);}, 600000);
+    addEventListener('touchmove', (e) => {
+        target = touchStartValue - (e.touches[0].clientY - touchStartY)*0.01;
+    });
 
-regenerate()
+    return (t) => value += (target - value)*k;
+};
   </script>
   <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >

@@ -32,7 +32,7 @@
       @import url('https://rsms.me/inter/inter.css');
       html { font-family: 'Inter', sans-serif; }
       @supports (font-variation-settings: normal) {html { font-family: 'Inter var', sans-serif; }}
-      .bio {color: white; width: 100%; height: 100%; padding: 4%;}
+      #bio {color: white; width: 100%; height: 100%; padding: 4%; background: rgba(0, 0, 0, 1.0); transition: background 3.5s linear;}
       html, body {width: 100%; height: 100%;}
       body {font-family: 'Inter', sans-serif; display: flex; margin: 0; background: black; overflow: hidden; font-size: 14px; background-position: center !important; background-size: cover !important;}
       h1 {font-size: 50px; margin-bottom: -5px; mix-blend-mode: exclusion;}
@@ -40,7 +40,7 @@
     </style>
   </head>
   <body>
-    <div class="bio">
+    <div id="bio">
       <h1><span><b>вилка стакан</b></span></h1>
       <p><span><b>low-skill coder, ham-handed designer, fake artist, shitposter, <i>new&nbsp;media&nbsp;art&nbsp;hustler</i></b>,<br>production @ <a href="https://cmtt.ru">Комитет</a> (<a href="https://tjournal.ru">TJournal</a>, <a href="https://dtf.ru">DTF</a>, <a href="https://vc.ru">vc.ru</a>)</span></p>
       <p><span>vilka stakan (rus.&nbsp;“вилка&nbsp;стакан”) can be&nbsp;translated as&nbsp;“plug glass”.<br>plug for my&nbsp;laptop and a&nbsp;glass of&nbsp;water for&nbsp;me&nbsp;to&nbsp;stay&nbsp;hydrated</span></p><p><span>my real name is <abbr title="Викентий Котвицкий">Vikentiy Kotwizkiy</abbr>, but you can call&nbsp;me&nbsp;Vik</span></p>
@@ -59,6 +59,7 @@
       return Math.floor(rand);
     }
     document.body.style.background = `url('./bgs/${randomInteger(1,35)}-min.jpg')`
+    document.getElementById('bio').style.background = 'rgba(0, 0, 0, 0)'
   
     const spotify = (text) => {
     if (text=='paused'||text=='⚠️ Error, try again later') {document.getElementById("spotify-paragraph").outerHTML = "";}

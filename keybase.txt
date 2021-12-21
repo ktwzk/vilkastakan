@@ -4,7 +4,7 @@ https://keybase.io/ktwzk
 
 I hereby claim:
 
-  * I am an admin of https://vlks.tk
+  * I am an admin of http://vlk.st
   * I am ktwzk (https://keybase.io/ktwzk) on keybase.
   * I have a public key with fingerprint 69F6 8CDB 5B75 F478 6541  40EB 3B3A 8C76 2F9F 4423
 
@@ -22,26 +22,26 @@ To do so, I am signing this object:
       "username": "ktwzk"
     },
     "merkle_root": {
-      "ctime": 1606984929,
-      "hash_meta": "80f36ea8b5885074dd30b9b0c0256acb686d0a67e835e42aa51cdd313bc29df1",
-      "seqno": 18298088
+      "ctime": 1640111263,
+      "hash_meta": "467a731122a594d0f1f76d56262d69be055ffbe3d41d1ba3b613374b313b7009",
+      "seqno": 21480241
     },
     "revoke": {
       "sig_ids": [
-        "353f66d09f6a4527ee5b556735a64ee30d2515b02f94b4da3280f8706973d6e80f"
+        "119d2d639e41d04c75f08d89e0197038a979084425c31faa679f4ce27e70cebc0f"
       ]
     },
     "service": {
-      "hostname": "vlks.tk",
-      "protocol": "https:"
+      "hostname": "vlk.st",
+      "protocol": "http:"
     },
     "type": "web_service_binding",
     "version": 1
   },
-  "ctime": 1606984948,
+  "ctime": 1640111268,
   "expire_in": 157680000,
-  "prev": "e44eb4968e96605e6a66a10925dc825067707df49e94f22e908f9c4d743832e4",
-  "seqno": 49,
+  "prev": "d74c031ba12160b5f53ad450a467ebe1bf3ebea9b7d59bcf091ce0423f9a44cf",
+  "seqno": 51,
   "tag": "signature"
 }
 
@@ -51,26 +51,26 @@ which yields the signature:
 Version: Keybase OpenPGP v2.1.13
 Comment: https://keybase.io/crypto
 
-yMK3AnicrVNtaBxFGL7EtJqIEjQaa7XgajXEo87O186eEFo/SqrYWkVaseWY2Xkn
-t93L7XV372IaUtvgRwUVIT+sBcFWkYD9IWixxmJDKyRF0RNrpSBKVdQiFKRV/GGM
-s6EiiD/dP8vMPM/zPu/zznx4xSWFrrZ3YaH5/kLb020fHYsbhfLc6xfGHBXrUac0
-5kSw+IOqhjQrR6F2Sg5yketTRiRHlAiFAQtjGDce9QkYrREQX2oZAJECMRwoSo1U
-HMD1FSKBdBVGSDpFx4S1IUjqSVjLrCz3DReBVkx5zFBPcEZdikARZXUCj2PjG0ox
-scRKnOYMa07JFFaFsd2zi/Kivf/A/8++G4ty1BgUKOJ5AfV5AC7BFHEktLFaArt+
-DkwhqclhyL1mIzsiZ7zoDEMSVaGcxHGWJxtkYX7ucsR9QX3s2+5kWikPQyYtTSBD
-OEihmBAMeVRrgpS1EyDMuAwUF1wjyT0QhAHFUjI3sBiXqAD72rjWRArba7GtILAv
-kBDWQgLNOIK8ehoO2dBSp/SYQxgx3IrZKUjKsAfAFGPcI0xyCkCQxsxlCtlYqaJa
-Emy9Cc/a9ojmYBfO1vG8WtIMg0XxfEoXu29Wo3RVFlk39STO4iCu2s1KltXTUp5J
-NlrPUSOgyhf5ZRXWtL0eltGEJA3jmu3AIv8VFxVFBx6vhwmUwxzBPC6Q/fI60LSS
-QCkoOx8BPueIAZecSxf5mOlAYIa45yFPG+qDTw3G4CNh/IBqz94QgoH+kx+1k8nk
-kNW0odVk1kjAGT82s6Wj0NZVWLqkPX83ha7O7r9f01XissJ76zb0PKof2tyRLr3n
-7OArp849IPvSF5/f3ru26h931px68Pitg8t68be7u8nbq0d2H9xwbn50YfXkkr3R
-XN9rO+rXrmltap39bNddnXt6pqbmWtG6/T1X3vzS/MOVwe6VHbP9e5ffP9kun9s1
-8cm20pfL6IrJJ346f7V37/V7pm68cMc3R4qlZ2aOHup/5J2Nt/1+8IvKTvXmlu+i
-Mx/PXfPBV9OzP6xd33tk5s+vpz994+XTY8mr7PYTtUOV9gb/Zf7oU4c7z+/bf9/6
-FpOXqs0wdXp04Lcfzfc/D1zX2Th5OPv8WXhyaGX/Dbe8cObOrTsv/+Ot6f5ts60D
-E90Tyw/MrrjpRN+vd5c3niyObBr4C7BMex4=
-=BzH8
+yMK1AnicrZNdaB1FFMdvTNPWWKu1UIUGH9Y82Uuc2Zmd2blVQsCi1SL48ZS2uczM
+nknW+7E3u5vbpDHBWlFSkBajCFqjGPGhLXKR1kJrTQnaLyNYLNU+WPtQC0ZC9aE1
+hEKcDRVBfHRfhp0553/+53dmvrq7OdfadBQW68cXm15r+ma6MpCT020fDzsqCoac
+wrBTgqUFygEkabEUBk7BQRhhQT0iGaLEVy64vjEeM5wKAiYIEBAhA6mBSB95rlaU
+GqkYABYKES2xchGSTt4xYbUX4locVlMry4Rhvg6Up7hnKPeZRzFFoIiyOpoz1whD
+qUtsYl+UZBnWnJIJdISR3bM/xSV7/xH/P/seWJKjxiCtCOeaCqYBE5cihvzAWC3f
+xSILTCCuygpkXtMdO0vOSN6pQFwqQzGOojQjq9MwO8eMIoyxy4jtTiZ9xQqkMivC
+uOTEHrjSEzRABhvOAo+5zA2YUIA8zxgFJKA4wEoSxTAhnCqCieIIZSYS6K9GTsHF
+1EcuxdZCDPWoBFn1JOy10BKnsNXBWARWkwiwUohqOwTbjC/AQuOI+FJwgXwL1NME
+GykZt3g1uBw40qA0Ms72kaxaXA/1kng2pdvd18ulDjuyvFOLozTSUdnu9aVprZAR
+SYdqWcwOUMXb2UUVVgN7OWxCHeIkjKqWkI38Nyw/78BgLYyhGGYRHmc+sl9WBupW
+MuBUI2K5YBczpDxjhx9QD0mLFRRgZYhdpFA88ITSBgmsAdk7Y4SkVJt/6HnY+pS9
+VtMiq8p0IAZnZPrktmW5ptbc8pY7sleTa73z3r/f0uTWlblrg+P6zatvd6pnZnhx
+9vTMhvffW+w/9tLBrrGVUxNT7RfaH+o/1DN1/fLZ3yYvtb1zZLbbu/n4n1tuJPc/
+/8Ifo27pRnn/A5356sMH3YkvXjz37K+Ni+cO4FurXxnomJnrbt5Mjrevmbun8cF9
+F1/+sjPZOL//0lz7Ez41m0bdK8vX+XvGj3UNXv/ofNfm3GMLw2tDcnSspdG9/o2d
+T83vrVwOP68snG/5+vdPD+x7tfrZz0/PlJ5sPdPF1ly4+d1dr38/0bPY2PXutyt6
+Dq9aKP9AT636cMtP639ZsWvy6lsnntv4yNjQ6bV9V+Zn955sPrE79qf3LWvcavjj
+P44+2rZh9SeNTZU9106N735w3V/9y4L5
+=7eDC
 -----END PGP MESSAGE-----
 
 And finally, I am proving ownership of this host by posting or

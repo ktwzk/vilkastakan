@@ -59,7 +59,7 @@
       <p><span>vilka stakan (rus.&nbsp;“вилка&nbsp;стакан”) can be&nbsp;translated as&nbsp;“plug glass”.<br>plug for my&nbsp;laptop and a&nbsp;glass of&nbsp;water for&nbsp;me&nbsp;to&nbsp;stay&nbsp;hydrated</span></p><p><span>my real name is <abbr title="Викентий Котвицкий">Vikentiy</abbr>, but you can call&nbsp;me&nbsp;Vik or Vilk</span></p>
       
       <p><span>follow/like: <a href="https://t.me/vilkastakan">telegram</a>, <a href="https://twitter.com/vilkastakan">twitter</a>, <a href="https://github.com/ktwzk">github</a>, <a href="https://behance.net/vilkastakan">behance</a>, <a href="https://glitch.com/@vilkastakan">glitch</a></span></p>
-      <p><span>listen to: my new track <a href="https://song.link/mk43rv8cqszrg">about february'22</a>. also <a href="https://soundcloud.com/vilkastakan">soundcloud</a>, <a href="https://open.spotify.com/user/n5xe7xa9ygnl8o1mta2cg7yy9?si=RpSiNyYmRcihYmhXckTaFg">some spotify&nbsp;playlists</a> and <a href="https://mixcloud.com/vilkastakan">mixcloud</a></span></p>
+      <p><span>listen to: my new track <a href="https://song.link/mk43rv8cqszrg">about february'22</a>. also <a href="https://soundcloud.com/vilkastakan">soundcloud</a>, <a href="https://open.spotify.com/user/n5xe7xa9ygnl8o1mta2cg7yy9?si=RpSiNyYmRcihYmhXckTaFg">some spotify&nbsp;playlists</a></span></p>
       <div id="spotify-paragraph"></div>
       <p><span>contact: <a href="mailto:me@vlk.st">me@vlk.st</a>, tlg&nbsp;<a href="https://t.me/lvlkl">@lVLKl</a>, discord&nbsp;<a href="https://discord.gg/dEaF3Ys">вилкастакан#1312</a></span></p>
     </div>
@@ -72,8 +72,14 @@
       let rand = min + Math.random() * (max + 1 - min);
       return Math.floor(rand);
     }
+
+    let k = randomInteger(1,35);
+
+    var pic = new Image();
+    pic.src = `/bgs/${k}-min.png`;
+
     window.onload = function() {
-      document.body.style.background = `url('./bgs/${randomInteger(1,35)}-min.jpg')`
+      document.body.style.background = `url('./bgs/${k}-min.png')`
     }
   
     const spotify = (text) => {

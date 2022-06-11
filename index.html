@@ -72,8 +72,9 @@
       let rand = min + Math.random() * (max + 1 - min);
       return Math.floor(rand);
     }
-    document.body.style.background = `url('./bgs/${randomInteger(1,35)}-min.jpg')`
-    
+    window.onload = function() {
+      document.body.style.background = `url('./bgs/${randomInteger(1,35)}-min.jpg')`
+    }
   
     const spotify = (text) => {
     if (text=='paused'||text=='⚠️ Error, try again later') {document.getElementById("spotify-paragraph").outerHTML = "";}

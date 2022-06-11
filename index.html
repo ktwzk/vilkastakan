@@ -32,24 +32,30 @@
       @import url('https://rsms.me/inter/inter.css');
       html { font-family: 'Inter', sans-serif; }
       @supports (font-variation-settings: normal) {html { font-family: 'Inter var', sans-serif; }}
-      #bio {color: white; width: 100%; height: 100%; padding: 4%; background: rgba(0, 0, 0, 1.0); transition: background 3.5s linear;}
+      #bio {color: white; padding: 0 1rem;}
       html, body {width: 100%; height: 100%;}
-      body {font-family: 'Inter', sans-serif; display: flex; margin: 0; background: black; overflow: hidden; font-size: 14px; background-position: center !important; background-size: cover !important;}
+      body {font-family: 'Inter', sans-serif; background: black; overflow: hidden; font-size: 14px; background: rgba(0, 0, 0, 1.0); transition: background 3.5s linear; background-size: cover !important; }
       h1 {font-size: 50px; margin-bottom: -5px; mix-blend-mode: exclusion;}
       a {color: white;} a:hover{text-decoration: none; background-color: white; color: black !important;} a:visited {color: white;}
+      .wrapper {display: grid; place-items: baseline; }
+      .content {display: flex;flex-direction: column;align-items: center;justify-content: center;}
     </style>
   </head>
   <body>
+    <div class="wrapper">
+    <div class="content" role="main">
     <div id="bio">
       <h1><span><b>вилка стакан</b></span></h1>
       <p><span><b>low-skill coder, ham-handed designer, fake artist, shitposter, <i>new&nbsp;media&nbsp;art&nbsp;hustler</i></b>,<br>production @ <a href="https://cmtt.ru">Комитет</a> (<a href="https://tjournal.ru">TJournal</a>, <a href="https://dtf.ru">DTF</a>, <a href="https://vc.ru">vc.ru</a>)</span></p>
-      <p><span>vilka stakan (rus.&nbsp;“вилка&nbsp;стакан”) can be&nbsp;translated as&nbsp;“plug glass”.<br>plug for my&nbsp;laptop and a&nbsp;glass of&nbsp;water for&nbsp;me&nbsp;to&nbsp;stay&nbsp;hydrated</span></p><p><span>my real name is <abbr title="Викентий Котвицкий">Vikentiy Kotwizkiy</abbr>, but you can call&nbsp;me&nbsp;Vik or Vilk</span></p>
+      <p><span>vilka stakan (rus.&nbsp;“вилка&nbsp;стакан”) can be&nbsp;translated as&nbsp;“plug glass”.<br>plug for my&nbsp;laptop and a&nbsp;glass of&nbsp;water for&nbsp;me&nbsp;to&nbsp;stay&nbsp;hydrated</span></p><p><span>my real name is <abbr title="Викентий Котвицкий">Vikentiy</abbr>, but you can call&nbsp;me&nbsp;Vik or Vilk</span></p>
       
       <p><span>follow/like: <a href="https://t.me/vilkastakan">telegram</a>, <a href="https://twitter.com/vilkastakan">twitter</a>, <a href="https://github.com/ktwzk">github</a>, <a href="https://behance.net/vilkastakan">behance</a><!--, <a href="https://glitch.com/@vilkastakan">glitch</a>--></span></p>
       <p><span>listen to: my new lo-fi tracks on <a href="https://album.link/ffnthzqbstfm4">Chill EP</a>! <br>also <a href="https://soundcloud.com/vilkastakan">soundcloud</a>, <a href="https://open.spotify.com/user/n5xe7xa9ygnl8o1mta2cg7yy9?si=RpSiNyYmRcihYmhXckTaFg">some spotify&nbsp;playlists</a><!--, <a href="https://mixcloud.com/vilkastakan">mixcloud</a>, --></span></p>
       <div id="spotify-paragraph"></div>
       <p><span>contact: <a href="mailto:me@vlk.st">me@vlk.st</a>, tlg&nbsp;<a href="https://t.me/lvlkl">@lVLKl</a>, discord&nbsp;<a href="https://discord.gg/dEaF3Ys">вилкастакан#1312</a></span></p>
       <!--<p><span>donate: <a href="https://donate.stream/en/vilkastakan">donate.stream</a></span></p>-->
+    </div>
+    </div>
     </div>
     
   </body>
@@ -59,7 +65,7 @@
       return Math.floor(rand);
     }
     document.body.style.background = `url('./bgs/${randomInteger(1,35)}-min.jpg')`
-    document.getElementById('bio').style.background = 'rgba(0, 0, 0, 0)'
+    
   
     const spotify = (text) => {
     if (text=='paused'||text=='⚠️ Error, try again later') {document.getElementById("spotify-paragraph").outerHTML = "";}

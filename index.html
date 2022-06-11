@@ -73,10 +73,11 @@
           <p><span>contact: <a href="mailto:me@vlk.st">me@vlk.st</a>, tlg&nbsp;<a href="https://t.me/lvlkl">@lVLKl</a>, discord&nbsp;<a href="https://discord.gg/dEaF3Ys">вилкастакан#1312</a></span></p>
 
           <h2><b>projects</b></h2>
-          <div class="project"><a class="no-bg" href="https://song.link/mk43rv8cqszrg"><img src="./feb.png" width="90%"></a></div>
-          <div class="project"><a class="no-bg" href="https://album.link/ffnthzqbstfm4"><img src="./chill.png" width="90%"></a></div>
-          <a class="no-bg" href="https://pcod.glitch.me"><div class="project" id="pcod"><img src="./pcod-static.png" width="90%" class="main-img"><img src="./pcod.png" width="90%" class="hover-img"></div></a>
-          <div class="project"><a class="no-bg" href="https://clk.glitch.me"><img src="./clk.png" width="90%"></a></div>
+          <div class="project"><a class="no-bg" target="_blank" href="https://song.link/mk43rv8cqszrg"><img src="./feb.png" width="90%"></a></div>
+          <div class="project"><a class="no-bg" target="_blank" href="https://album.link/ffnthzqbstfm4"><img src="./chill.png" width="90%"></a></div>
+          <div class="project"><a class="no-bg" target="_blank" href="https://www.behance.net/gallery/94986081/Identity-for-Stay-Home-CTF"><img src="./stay.png" width="90%"></a></div>
+          <a class="no-bg" href="https://pcod.glitch.me" target="_blank" ><div class="project" id="pcod"><img src="./pcod-static.png" width="90%" class="main-img"><img src="./pcod.png" width="90%" class="hover-img"></div></a>
+          <div class="project"><a class="no-bg" target="_blank" href="https://clk.glitch.me"><img src="./clk.png" width="90%"></a></div>
         </div>
       </div>
     </div>
@@ -95,6 +96,9 @@
   
   var pic = new Image();
   pic.src = `/bgs/${k}-min.png`;
+
+  var picod = new Image();
+  picod.src = `./pcod.png`;
   
   pic.onload = function() {
     document.body.style.background = `url('./bgs/${k}-min.png') no-repeat center center fixed`;

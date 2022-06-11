@@ -88,22 +88,27 @@
 
   const spotify = (text) => {if (text=='paused'||text=='⚠️ Error, try again later') {document.getElementById("spotify-paragraph").outerHTML = "";} else {document.getElementById("spotify-paragraph").innerHTML = '<p><span>now playing on my Spotify: <span id="spotify">' + text + '</span></span></p>'}};
   
-  fetch('https://spotify-now-playing.glitch.me/').then(response => response.text()).then(text => spotify(text));
+  fetch('https://spotify-now-playing.glitch.me/api').then(response => response.text()).then(text => spotify(text));
   
   function randomInteger(min, max) {let rand = min + Math.random() * (max + 1 - min);return Math.floor(rand);}
   
   let k = randomInteger(1,35);
   
   var pic = new Image();
-  pic.src = `/bgs/${k}-min.png`;
 
-  var picod = new Image();
-  picod.src = `./pcod.png`;
-  
   pic.onload = function() {
     document.body.style.background = `url('./bgs/${k}-min.png') no-repeat center center fixed`;
     document.getElementById("main").style.background = "rgba(0, 0, 0, 0.0)";
   }
+
+  pic.src = `/bgs/${k}-min.png`;
+
+  var picod = new Image();
+  picod.src = `./pcod.png`;
+  var feb = new Image();
+  feb.src = `./feb.png`;
+  
+
   
   
   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");ym(69660460, "init", {clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true});

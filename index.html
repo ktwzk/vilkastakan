@@ -42,12 +42,19 @@
     html { font-family: 'Inter', sans-serif; overflow-x: hidden; padding: 0;}
     @supports (font-variation-settings: normal) {html { font-family: 'Inter var', sans-serif; }}
     #bio {color: white; padding: 0 1rem;}
-    body {font-family: 'Inter', sans-serif; background: black; overflow-x: hidden; font-size: 14px; background-position: center; background-attachment: fixed;  background-size: cover !important; background: rgba(0, 0, 0, 1.0); padding: 0;}
+    body {font-family: 'Inter', sans-serif; background: black; overflow-x: hidden; font-size: 14px; background: rgba(0, 0, 0, 1.0); padding: 0;}
     h1 {font-size: 50px; margin-bottom: -5px; mix-blend-mode: exclusion;}
+    h2 {font-size: 40px; mix-blend-mode: exclusion;}
     a {color: white;} a:hover{text-decoration: none; background-color: white; color: black !important;} a:visited {color: white;}
+    .no-bg:hover{background-color: rgba(0, 0, 0, 0.0);}
+    .project {margin-bottom: 1rem;}
     .wrapper {display: grid; place-items: baseline;}
     .content {display: flex;flex-direction: column;align-items: center;justify-content: center;}
-    #main {width: 100vw; height: 100vh; background: rgba(0, 0, 0, 1.0); transition: background 3.5s linear;}
+    #main {min-width: 100vw; min-height: 100vh; background: rgba(0, 0, 0, 1.0); transition: background 3.5s linear;}
+    #pcod .hover-img {display: none;padding: 0px !important;}
+    #pcod:hover .hover-img {display: block; padding: 0px !important;}
+    #pcod:hover .main-img {display: none; padding: 0px !important;}
+    #pcod .main-img {display: block; padding: 0px !important;}
     </style>
     
   </head>
@@ -56,7 +63,7 @@
     <div class="wrapper">
       <div class="content" role="main">
         <div id="bio">
-          <h1><span><b>вилка стакан</b></span></h1>
+          <h1><b>вилка стакан</b></h1>
           <p><span><b>low-skill coder, ham-handed designer, fake artist, shitposter, <i>new&nbsp;media&nbsp;art&nbsp;hustler</i></b>,<br>production @ <a href="https://cmtt.ru">Комитет</a> (<a href="https://tjournal.ru">TJournal</a>, <a href="https://dtf.ru">DTF</a>, <a href="https://vc.ru">vc.ru</a>)</span></p>
           <p><span>vilka stakan (rus.&nbsp;“вилка&nbsp;стакан”) can be&nbsp;translated as&nbsp;“plug glass”.<br>plug for my&nbsp;laptop and a&nbsp;glass of&nbsp;water for&nbsp;me to&nbsp;stay&nbsp;hydrated</span></p><p><span>my real name is <abbr title="Викентий Котвицкий">Vikentiy</abbr>, but you can call&nbsp;me&nbsp;Vik or&nbsp;Vilk</span></p>
           
@@ -64,6 +71,12 @@
           <p><span>listen to: my new track <a href="https://song.link/mk43rv8cqszrg">about&nbsp;february'22</a>. also <a href="https://soundcloud.com/vilkastakan">soundcloud</a>, <a href="https://open.spotify.com/user/n5xe7xa9ygnl8o1mta2cg7yy9?si=RpSiNyYmRcihYmhXckTaFg">some spotify&nbsp;playlists</a></span></p>
           <div id="spotify-paragraph"></div>
           <p><span>contact: <a href="mailto:me@vlk.st">me@vlk.st</a>, tlg&nbsp;<a href="https://t.me/lvlkl">@lVLKl</a>, discord&nbsp;<a href="https://discord.gg/dEaF3Ys">вилкастакан#1312</a></span></p>
+
+          <h2><b>projects</b></h2>
+          <div class="project"><a class="no-bg" href="https://song.link/mk43rv8cqszrg"><img src="./feb.png" width="90%"></a></div>
+          <div class="project"><a class="no-bg" href="https://album.link/ffnthzqbstfm4"><img src="./chill.png" width="90%"></a></div>
+          <a class="no-bg" href="https://pcod.glitch.me"><div class="project" id="pcod"><img src="./pcod-static.png" width="90%" class="main-img"><img src="./pcod.png" width="90%" class="hover-img"></div></a>
+          <div class="project"><a class="no-bg" href="https://clk.glitch.me"><img src="./clk.png" width="90%"></a></div>
         </div>
       </div>
     </div>
@@ -71,6 +84,11 @@
     
   </body>
   <script>
+
+  const spotify = (text) => {if (text=='paused'||text=='⚠️ Error, try again later') {document.getElementById("spotify-paragraph").outerHTML = "";} else {document.getElementById("spotify-paragraph").innerHTML = '<p><span>now playing on my Spotify: <span id="spotify">' + text + '</span></span></p>'}};
+  
+  fetch('https://spotify-now-playing.glitch.me/').then(response => response.text()).then(text => spotify(text));
+  
   function randomInteger(min, max) {let rand = min + Math.random() * (max + 1 - min);return Math.floor(rand);}
   
   let k = randomInteger(1,35);
@@ -79,16 +97,10 @@
   pic.src = `/bgs/${k}-min.png`;
   
   pic.onload = function() {
-    document.body.style.background = `url('./bgs/${k}-min.png')`;
+    document.body.style.background = `url('./bgs/${k}-min.png') no-repeat center center fixed`;
     document.getElementById("main").style.background = "rgba(0, 0, 0, 0.0)";
   }
   
-  const spotify = (text) => {
-  if (text=='paused'||text=='⚠️ Error, try again later') {document.getElementById("spotify-paragraph").outerHTML = "";}
-  else {document.getElementById("spotify-paragraph").innerHTML = '<p><span>now playing on my Spotify: <span id="spotify">' + text + '</span></span></p>'}
-  };
-  
-  fetch('https://spotify-now-playing.glitch.me/').then(response => response.text()).then(text => spotify(text));
   
   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");ym(69660460, "init", {clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true});
   </script>

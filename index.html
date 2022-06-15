@@ -6,13 +6,13 @@
     <title>вилка стакан</title>
     <style>
     @import url('https://rsms.me/inter/inter.css');
-    * {-webkit-tap-highlight-color: transparent;}
+    * {-webkit-tap-highlight-color: transparent}
     html { font-family: 'Inter', sans-serif; overflow-x: hidden; padding: 0;}
     @supports (font-variation-settings: normal) {html { font-family: 'Inter var', sans-serif; }}
     #bio {color: white; padding: 0 1rem;}
     body {font-family: 'Inter', sans-serif; background: black; overflow-x: hidden; font-size: 14px; background: rgba(0, 0, 0, 1.0); background-size: cover; padding: 0; margin: 0 !important;}
-    h1 {font-size: 50px; mix-blend-mode: exclusion;}
-    h2 {font-size: 40px; mix-blend-mode: exclusion;}
+    h1 {font-size: 50px; mix-blend-mode: exclusion; filter: url(#n0) url(#n1);}
+    h2 {font-size: 40px; mix-blend-mode: exclusion; filter: url(#n0) url(#n1);}
     a {color: white;} a:hover{text-decoration: none; background-color: white; color: black !important;} a:visited {color: white;}
     .no-bg:hover{background-color: rgba(0, 0, 0, 0.0);}
     .project {margin-bottom: 1rem;}
@@ -53,7 +53,6 @@
     <meta name="msapplication-TileColor" content="#000000">
     <meta name="theme-color" content="#000000">
     
-    
     <script type="application/ld+json">
     {"@context" : "http://schema.org", "@type" : "Person", "name" : "vilka stakan", "birthDate" : "1997-09-04", "email" : "me@vlk.st", "alternateName": "Vik Kotwizkiy", "url" : "https://vlk.st/", "image": "https://vlk.st/me.jpeg", "sameAs" : [ "https://instagram.com/vilkastakan", "https://github.com/ktwzk", "https://keybase.io/ktwzk", "https://behance.net/vilkastakan", "https://t.me/lvlkl"]}
     </script>
@@ -73,12 +72,13 @@
             <p><span>listen to: my new track <a href="https://song.link/mk43rv8cqszrg">about&nbsp;february'22</a>. also <a href="https://soundcloud.com/vilkastakan">soundcloud</a>, <a href="https://open.spotify.com/user/n5xe7xa9ygnl8o1mta2cg7yy9?si=RpSiNyYmRcihYmhXckTaFg">spotify&nbsp;playlists</a></span></p>
             <p><span><div id="spotify-paragraph">&nbsp;</div></span></p>
             <p><span>contact: <a href="mailto:me@vlk.st">me@vlk.st</a>, tlg&nbsp;<a href="https://t.me/lvlkl">@lVLKl</a>, discord&nbsp;<a href="https://discord.gg/dEaF3Ys">вилкастакан#1312</a></span></p>
+            <svg class="fixed inset-0 transform -translate-x-full" height="0"> <defs> <filter id="n0"> <feTurbulence type="turbulence" baseFrequency="0.001 0.1" numOctaves="2" result="NOISE"/> <feGaussianBlur in="SourceGraphic" result="BLURRED" stdDeviation="0.01"/> <feDisplacementMap in2="NOISE" in="BLURRED" scale="3" xChannelSelector="R" yChannelSelector="G"/> </filter> <filter id="n1"> <feTurbulence type="fractalNoise" baseFrequency="0.001 0.001" numOctaves="5" result="NOISE" seed="123912"/> <feGaussianBlur in="SourceGraphic" result="BLURRED" stdDeviation="0"/> <feDisplacementMap id="displacer" in2="NOISE" in="BLURRED" scale="41" xChannelSelector="R" yChannelSelector="R" result="DISPLACED"/> </filter> </defs> </svg>
+    
             <h2><b>projects</b></h2>
             <div class="project"><a class="no-bg" target="_blank" href="https://www.instagram.com/citaty_dlya_uma/"><img src="./rudalle.png"></a></div>
             <div class="project"><a class="no-bg" target="_blank" href="https://song.link/mk43rv8cqszrg"><img src="./feb.png"></a></div>
             <div class="project"><a class="no-bg" target="_blank" href="https://album.link/ffnthzqbstfm4"><img src="./chill.png"></a></div>
             <div class="project"><a class="no-bg" target="_blank" href="https://glitch.com/~spotify-now-playing"><img src="./np.png"></a></div>
-            <div class="project"></div>
 
             <div class="project soundcloud">
               <iframe width="44%" height="120" style="max-width: 3000px; display: inline; padding-right: 1.75%" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2Fvilkastakan%2F%D0%B7%D0%BE%D0%BD%D0%B0-%D1%81%D0%B1%D0%BB%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-06032021-beer-opening-pre-party-mix%2F" frameborder="0" ></iframe>

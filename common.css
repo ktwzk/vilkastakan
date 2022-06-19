@@ -21,7 +21,8 @@ dark-mode-toggle {--dark-mode-toggle-dark-icon: url("./moon.png");--dark-mode-to
 img {width: 100%; }
 .marq {position: fixed; z-index: 1337; width: 100%; height: 100%; margin: auto;-webkit-user-select: none; user-select: none; pointer-events: none; animation-duration: 60s; animation-name: dvdy; animation-iteration-count: infinite;}
 #telegram img {width: 256px; }
-#telegram {pointer-events: auto !important; animation-duration: 80s; animation-name: dvdx; animation-iteration-count: infinite;}
+#telegram a {pointer-events: auto !important;}
+#telegram { animation-duration: 80s; animation-name: dvdx; animation-iteration-count: infinite;}
 @keyframes dvdx {0%,100% {transform: translateX(0%);}50% {transform: translateX(calc(100% - 256px));}}
 @keyframes dvdy {0%,100% {transform: translateY(0%);}50% {transform: translateY(calc(100% - 183px));}}
 .bio-back {background: url('./back.png'); background-position: center center; color: black; border-radius: 6px; width: 100%;}

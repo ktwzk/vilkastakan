@@ -4,10 +4,10 @@ html { font-family: 'Inter', sans-serif; overflow-x: hidden; padding: 0;}
 @supports (font-variation-settings: normal) {html { font-family: 'Inter var', sans-serif; }}
 #bio {color: black; padding: 0 1rem;}
 body {font-family: 'Inter', sans-serif; overflow-x: hidden; font-size: 14px; background: rgba(133, 182, 255, 1.0); padding: 0; margin: 0 !important;}
-h1 {font-size: 50px; margin-bottom: 0px; filter: url(#n1) ; color: white;/*mix-blend-mode: exclusion;*/ }
-h2 {font-size: 40px; margin-bottom: 10px; filter: url(#n1); color: white;/*mix-blend-mode: exclusion;*/ }
+h1 {font-size: 50px; margin-bottom: 0px; color: white;/*mix-blend-mode: exclusion;*/ display: inline-block;}
+h2 {font-size: 40px; margin-bottom: 10px; color: white;/*mix-blend-mode: exclusion;*/ }
 a {color: black;} a:hover{text-decoration: none; background-color: black; color: white !important;} a:visited {color: black;}
-dark-mode-toggle {--dark-mode-toggle-dark-icon: url("./moon.png");--dark-mode-toggle-light-icon: url("./sun.png");--dark-mode-toggle-icon-size: 40px;position: absolute;bottom: 0; margin: 0 !important; padding: 0 10px !important; padding-left: 20px;}
+dark-mode-toggle {--dark-mode-toggle-dark-icon: url("./moon.png");--dark-mode-toggle-light-icon: url("./sun.png");--dark-mode-toggle-icon-size: 40px; display: inline-block; transform: translateY(10px);} 
 #spotify-paragraph {max-width: 500px;}
 .no-bg:hover{background-color: rgba(0, 0, 0, 0.0); }
 .project {margin-bottom: 1rem;}
@@ -31,6 +31,5 @@ img {width: 100%; }
 }
 @media (min-width: 2500px) {.soundcloud {display: none}}
 @media (max-width: 500px) {.soundcloud {display: none} #telegram img {width: 128px !important;}}
-@media (min-width:350px) and (max-width:430px) {h1 {font-size: 40px} dark-mode-toggle {--dark-mode-toggle-icon-size: 30px;}}
-
-
+@media (min-width:350px) and (max-width:430px) {h1 {font-size: 40px} dark-mode-toggle {--dark-mode-toggle-icon-size: 30px; transform: translateY(8px);}}
+@media (max-width: 349px) {h1 {font-size: 28px} h2 {font-size: 18px} dark-mode-toggle {--dark-mode-toggle-icon-size: 20px; transform: translateY(5px);}

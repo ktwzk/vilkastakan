@@ -31,6 +31,6 @@ img {width: 100%; }
 }
 @media (min-width: 2500px) {.soundcloud {display: none}}
 @media (max-width: 500px) {.soundcloud {display: none} #telegram img {width: 128px !important;}}
-@media (min-width:370px) and (max-width:430px) {dark-mode-toggle {display: none !important} .fourtwenty {display: none;}}
+@media (min-width:350px) and (max-width:430px) {h1 {font-size: 40px} dark-mode-toggle {--dark-mode-toggle-icon-size: 30px;}}
 
 

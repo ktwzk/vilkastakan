@@ -19,10 +19,10 @@ dark-mode-toggle {--dark-mode-toggle-dark-icon: url("./moon.png");--dark-mode-to
 .projects * .main-img {display: block; padding: 0px !important; }
 .projects *:hover .main-img {display: none; padding: 0px !important;}
 img {width: 100%; }
-.marq {position: fixed; z-index: 1337; width: 100%; height: 100%; margin: auto;-webkit-user-select: none; user-select: none; pointer-events: none; animation-duration: 60s; animation-name: dvdy; animation-iteration-count: infinite;}
+.marq {position: fixed; z-index: 1337; width: 100%; height: 100%; margin: auto;-webkit-user-select: none; user-select: none; pointer-events: none; animation-duration: 90s; animation-name: dvdy; animation-iteration-count: infinite;}
 #telegram img {width: 256px; }
 #telegram a {pointer-events: auto !important;}
-#telegram { animation-duration: 80s; animation-name: dvdx; animation-iteration-count: infinite;}
+#telegram { animation-duration: 160s; animation-name: dvdx; animation-iteration-count: infinite;}
 @keyframes dvdx {0%,100% {transform: translateX(0%);}50% {transform: translateX(calc(100% - 256px));}}
 @keyframes dvdy {0%,100% {transform: translateY(0%);}50% {transform: translateY(calc(100% - 183px));}}
 .bio-back {background: url('./back.png'); background-position: center center; color: black; border-radius: 6px; width: 100%;}
@@ -34,6 +34,6 @@ img {width: 100%; }
 .bio-text {padding: 16px;}
 }
 @media (min-width: 2500px) {.soundcloud {display: none}}
-@media (max-width: 500px) {.soundcloud {display: none} #telegram img {width: 128px !important;} @keyframes dvdx {0%,100% {transform: translateX(0%);}50% {transform: translateX(calc(100% - 128px));}} @keyframes dvdy {0%,100% {transform: translateY(0%);}50% {transform: translateY(calc(100% - 92px));}}}
+@media (max-width: 500px) {.soundcloud {display: none} #telegram img {width: 128px !important;} .marq {animation-duration: 160s;} .marq {animation-duration: 90s;} @keyframes dvdx {0%,100% {transform: translateX(0%);}50% {transform: translateX(calc(100% - 128px));}} @keyframes dvdy {0%,100% {transform: translateY(0%);}50% {transform: translateY(calc(100% - 92px));}}}
 @media (min-width:350px) and (max-width:430px) {h1 {font-size: 40px} dark-mode-toggle {--dark-mode-toggle-icon-size: 30px; transform: translateY(8px);}}
 @media (max-width: 349px) {h1 {font-size: 28px} h2 {font-size: 18px} dark-mode-toggle {--dark-mode-toggle-icon-size: 20px; transform: translateY(5px);}

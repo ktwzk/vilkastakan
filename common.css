@@ -28,10 +28,9 @@ img {width: 100%; }
 .bio-back {background: white; color: black; width: 100%;}
 .bio-back:hover {background: white; color: black; width: 100%;}
 .bio-text {padding: 16px;}
-.fourtwenty {display: none;}
 }
 @media (min-width: 2500px) {.soundcloud {display: none}}
 @media (max-width: 500px) {.soundcloud {display: none} #telegram img {width: 128px !important;}}
-@media (min-width:370px) and (max-width:430px) {dark-mode-toggle {display: none !important}}
+@media (min-width:370px) and (max-width:430px) {dark-mode-toggle {display: none !important} .fourtwenty {display: none;}}
 
 

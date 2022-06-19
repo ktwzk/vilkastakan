@@ -4,41 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>вилка стакан</title>
-    <style>
-    @import url('https://rsms.me/inter/inter.css');
-    * {-webkit-tap-highlight-color: transparent}
-    html { font-family: 'Inter', sans-serif; overflow-x: hidden; padding: 0;}
-    @supports (font-variation-settings: normal) {html { font-family: 'Inter var', sans-serif; }}
-    #bio {color: black; padding: 0 1rem;}
-    body {font-family: 'Inter', sans-serif; overflow-x: hidden; font-size: 14px; background: rgba(133, 182, 255, 1.0); background-size: cover; padding: 0; margin: 0 !important;}
-    h1 {font-size: 50px; margin-bottom: 0px; filter: url(#n1) ; color: white;/*mix-blend-mode: exclusion;*/ }
-    h2 {font-size: 40px; margin-bottom: 10px; filter: url(#n1); color: white;/*mix-blend-mode: exclusion;*/ }
-    a {color: black;} a:hover{text-decoration: none; background-color: black; color: white !important;} a:visited {color: black;}
-    #spotify-paragraph {max-width: 500px;}
-    .no-bg:hover{background-color: rgba(0, 0, 0, 0.0); }
-    .project {margin-bottom: 1rem;}
-    .wrapper {display: grid; place-items: baseline;}
-    .content {display: flex; flex-direction: column; align-items: center; justify-content: center; justify-self: center;}
-    #main {max-width: 1000px !important; min-height: 100vh; background: rgba(133, 182, 255, 1.0); transition: background 3.5s linear; margin: auto;}
-    .projects * .hover-img {display: none;padding: 0px !important;}
-    .projects *:hover .hover-img {display: block; padding: 0px !important;}
-    .projects * .main-img {display: block; padding: 0px !important; }
-    .projects *:hover .main-img {display: none; padding: 0px !important;}
-    img {width: 100%; }
-    .marq {position: fixed; z-index: 1337; width: 100%; height: 100%;-webkit-user-select: none; user-select: none; pointer-events: none;}
-    #telegram img {width: 256px; } #telegram {pointer-events: auto !important;}
-    .bio-back {background: url('./back.png'); background-position: center center; color: black; border-radius: 6px; width: 100%;}
-    .bio-back:hover {background: url('./back-dither.png'); background-position: center center;}
-    .bio-text {padding: 16px;}
-    @media (max-width: 850px) {
-    .bio-back {background: white; color: black; width: 100%;}
-    .bio-back:hover {background: white; color: black; width: 100%;}
-    .bio-text {padding: 16px;}
-    .fourtwenty {display: none;}
-    }
-    @media (min-width: 2500px) {.soundcloud {display: none}}
-    @media (max-width: 500px) {.soundcloud {display: none} #telegram img {width: 128px !important;}}
-    </style>
+    <script type="module" src="https://unpkg.com/dark-mode-toggle"></script>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="dark.css" media="(prefers-color-scheme: dark)">
     <meta name="keywords" content="вилка стакан, вилкастакан, vilkastakan, vilka stakan, ktwzk, kotwizkiy, Викентий Котвицкий, Вик Котвицкий, Vik Kotwizkiy, Vincent Kotwizkiy, Vik Ktwzk, Вик Ктвцк, Котвицкий Викентий Борисович">
     <meta property="og:site_name" content="vilka stakan" />
     <meta property="og:title" content="вилка стакан" />
@@ -74,7 +42,7 @@
       <div class="wrapper">
         <div class="content" role="main">
           <div id="bio">
-            <h1><b>вилка стакан</b></h1>
+            <h1><b>вилка стакан</b> <dark-mode-toggle style="display: inline-block;" ></dark-mode-toggle></h1>
             <div class="bio-back">
               <div class="bio-text">
                 <p><span><b>digital kiddie, low-skill coder, ham-handed designer, fake artist, shitposter</b>,<br>production @ <a href="https://cmtt.ru">Комитет</a> (<a href="https://tjournal.ru">TJournal</a>, <a href="https://dtf.ru">DTF</a>, <a href="https://vc.ru">vc.ru</a>)</span></p>
@@ -103,7 +71,7 @@
             <iframe width="49%" height="300" style="max-width: 3000px; display: inline; padding-right: 2%; margin: 0 !important;" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/386513348&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><iframe width="49%" height="300" style="max-width: 3000px; display: inline; margin: 0 !important;" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/217743787&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
           </div>
           </div>
-          <p class="fourtwenty" style="padding-top: 120px;">Ну тут идея такая, что фон — это как бы небо, всё белое-серое — это облака, там наверху вот был круг — это солнце.<br>И вот травка, но я её не сам рисовал, если честно:</p>
+          <p class="fourtwenty" style="padding-top: 120px;">Ну тут идея такая, что фон — это как бы небо, всё белое-серое — это облака, там наверху вот были солнце или луна.<br>И вот травка, но я её не сам рисовал, если честно:</p>
           <img src="./grass.png" width="100%">
         </div>
       </div>

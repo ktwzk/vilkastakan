@@ -1,0 +1,37 @@
+@import url('https://rsms.me/inter/inter.css');
+* {-webkit-tap-highlight-color: transparent}
+html { font-family: 'Inter', sans-serif; overflow-x: hidden; padding: 0;}
+@supports (font-variation-settings: normal) {html { font-family: 'Inter var', sans-serif; }}
+#bio {color: black; padding: 0 1rem;}
+body {font-family: 'Inter', sans-serif; overflow-x: hidden; font-size: 14px; background: rgba(133, 182, 255, 1.0); padding: 0; margin: 0 !important;}
+h1 {font-size: 50px; margin-bottom: 0px; filter: url(#n1) ; color: white;/*mix-blend-mode: exclusion;*/ }
+h2 {font-size: 40px; margin-bottom: 10px; filter: url(#n1); color: white;/*mix-blend-mode: exclusion;*/ }
+a {color: black;} a:hover{text-decoration: none; background-color: black; color: white !important;} a:visited {color: black;}
+dark-mode-toggle {--dark-mode-toggle-dark-icon: url("./moon.png");--dark-mode-toggle-light-icon: url("./sun.png");--dark-mode-toggle-icon-size: 40px;position: absolute;bottom: 0; margin: 0 !important; padding: 0 10px !important; padding-left: 20px;}
+#spotify-paragraph {max-width: 500px;}
+.no-bg:hover{background-color: rgba(0, 0, 0, 0.0); }
+.project {margin-bottom: 1rem;}
+.wrapper {display: grid; place-items: baseline;}
+.content {display: flex; flex-direction: column; align-items: center; justify-content: center; justify-self: center;}
+#main {max-width: 1000px !important; min-height: 100vh; margin: auto;}
+.projects * .hover-img {display: none;padding: 0px !important;}
+.projects *:hover .hover-img {display: block; padding: 0px !important;}
+.projects * .main-img {display: block; padding: 0px !important; }
+.projects *:hover .main-img {display: none; padding: 0px !important;}
+img {width: 100%; }
+.marq {position: fixed; z-index: 1337; width: 100%; height: 100%;-webkit-user-select: none; user-select: none; pointer-events: none;}
+#telegram img {width: 256px; } #telegram {pointer-events: auto !important;}
+.bio-back {background: url('./back.png'); background-position: center center; color: black; border-radius: 6px; width: 100%;}
+.bio-back:hover {background: url('./back-dither.png'); background-position: center center;}
+.bio-text {padding: 16px;}
+@media (max-width: 850px) {
+.bio-back {background: white; color: black; width: 100%;}
+.bio-back:hover {background: white; color: black; width: 100%;}
+.bio-text {padding: 16px;}
+.fourtwenty {display: none;}
+}
+@media (min-width: 2500px) {.soundcloud {display: none}}
+@media (max-width: 500px) {.soundcloud {display: none} #telegram img {width: 128px !important;}}
+@media (min-width:370px) and (max-width:430px) {dark-mode-toggle {display: none !important}}
+
+

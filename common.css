@@ -42,6 +42,7 @@ a {color: #4C4AC2;} a:hover {color: black;} a:visited {color: #4C4AC2;} a:visite
 	body {font-size: 22px; line-height: 37px;}
 	.white {filter:none;}
 	.nomob {display: none;}
+	.pixel {filter: none;}
 }
 
 /*

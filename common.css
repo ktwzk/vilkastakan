@@ -6,7 +6,7 @@ body {font-family: 'Inter', sans-serif; overflow-x: hidden; font-size: 14px; bac
 
 a {color: #4C4AC2;} a:hover {color: black;} a:visited {color: #4C4AC2;} a:visited:hover {color: black;}
 
-.logo {width: auto; min-height:200px; background-image: url('./vilk-tag.svg'); background-size: 100% 100%; background-position: center; background-repeat: no-repeat;} .logo:hover {filter: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='b' x='0' y='0'%3E%3CfeFlood x='5' y='5' height='0.1' width='0.1'/%3E%3CfeComposite width='5' height='5'/%3E%3CfeTile result='a'/%3E%3CfeComposite in='SourceGraphic' in2='a' operator='in'/%3E%3CfeMorphology operator='dilate' radius='2.5'/%3E%3C/filter%3E%3C/svg%3E#b");}
+.logo {width: auto; min-height:200px; background-image: url('./vilk-tag.svg'); background-size: 100% 100%; background-position: center; background-repeat: no-repeat;} 
 .white {background: white; border-radius: 2rem; margin: 3px;} 
 .green {background: #B8F79B; border-radius: 2rem; margin: 3px; font-size: 24px; line-height: 37px;}
 .what {background: #9BF7E6; border-radius: 2rem; margin: 3px; font-size: 24px; line-height: 37px;}
@@ -28,21 +28,12 @@ a {color: #4C4AC2;} a:hover {color: black;} a:visited {color: #4C4AC2;} a:visite
 .card { padding: 0rem; }
 
 
-.white {filter: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='b' x='0' y='0'%3E%3CfeFlood x='5' y='5' height='0.1' width='0.1'/%3E%3CfeComposite width='5' height='5'/%3E%3CfeTile result='a'/%3E%3CfeComposite in='SourceGraphic' in2='a' operator='in'/%3E%3CfeMorphology operator='dilate' radius='2.5'/%3E%3C/filter%3E%3C/svg%3E#b");}
-.white:hover {filter:none;}
-
-.pixel {filter: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='b' x='0' y='0'%3E%3CfeFlood x='5' y='5' height='0.1' width='0.1'/%3E%3CfeComposite width='5' height='5'/%3E%3CfeTile result='a'/%3E%3CfeComposite in='SourceGraphic' in2='a' operator='in'/%3E%3CfeMorphology operator='dilate' radius='2.5'/%3E%3C/filter%3E%3C/svg%3E#b");}
-.pixel:hover {filter: none;}
-
-
 @media (max-width: 640px) { 
 	.cards-2-1, .cards-1, .cards-1-2 { display: grid; grid-template-columns: 1fr; grid-auto-rows: auto; grid-gap: 0rem; } 
 	.green, .what {font-size: 22px; border:none;}
 	.inner {padding: 20px;}
 	body {font-size: 22px; line-height: 37px;}
-	.white {filter:none;}
 	.nomob {display: none;}
-	.pixel {filter: none;}
 }
 
 /*

@@ -12,6 +12,7 @@ a {color: #4C4AC2;} a:hover {color: black;} a:visited {color: #4C4AC2;} a:visite
 .what {background: #9BF7E6; border-radius: 2rem; margin: 3px; font-size: 24px; line-height: 37px;}
 .what a {color: black;} .what a:hover {color: #4C4AC2;}
 .projects {background: white; border-radius: 2rem; margin: 3px; font-size: 24px; line-height: 37px;}
+.crypto {background: white; border-radius: 2rem; margin: 3px;}
 
 .inner {padding: 10px 30px;}
 
@@ -23,6 +24,7 @@ a {color: #4C4AC2;} a:hover {color: black;} a:visited {color: #4C4AC2;} a:visite
 .cards-2-1 { display: grid; grid-template-columns: 2fr 1fr; grid-auto-rows: auto; grid-gap: 0rem; }
 .cards-1-2 { display: grid; grid-template-columns: 1fr 2fr; grid-auto-rows: auto; grid-gap: 0rem; }
 .cards-1 { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-auto-rows: auto; grid-gap: 0rem; }
+.cards-3  { display: grid; grid-template-columns: 1fr; grid-auto-rows: auto; grid-gap: 0rem; } 
 .card { padding: 0rem; }
 
 
@@ -36,7 +38,6 @@ a {color: #4C4AC2;} a:hover {color: black;} a:visited {color: #4C4AC2;} a:visite
 @media (max-width: 640px) { 
 	.cards-2-1, .cards-1, .cards-1-2 { display: grid; grid-template-columns: 1fr; grid-auto-rows: auto; grid-gap: 0rem; } 
 	.green, .what {font-size: 22px; border:none;}
-	.green, .what, .white, .projects {border-radius: 2rem;}
 	.inner {padding: 20px;}
 	body {font-size: 22px; line-height: 37px;}
 	.white {filter:none;}

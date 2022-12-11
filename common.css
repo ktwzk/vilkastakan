@@ -31,7 +31,7 @@ a {color: #4C4AC2;} a:hover {color: black;} a:visited {color: #4C4AC2;} a:visite
 @media (max-width: 640px) { 
 	.cards-2-1, .cards-1, .cards-1-2 { display: grid; grid-template-columns: 1fr; grid-auto-rows: auto; grid-gap: 0rem; } 
 	.green, .what {font-size: 22px; border:none;}
-	.inner {padding: 20px;}
+	.inner {padding: 0px 20px;}
 	body {font-size: 22px; line-height: 37px;}
 	.nomob {display: none;}
 }

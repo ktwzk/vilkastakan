@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>pho invoice</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+    body { font-family: 'JetBrains Mono', monospace;}
+    body {font-size: 20vw; line-height: 100%}
+    .bottom {
+    font-size: 7.4vw;
+    font-family: 'JetBrains Mono', monospace;
+    margin: 0;
+    line-height: 100%;
+    text-align: center;
+    }
+    img {filter: grayscale(100%); }
+    
+    .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    }
+    .dewrap {overflow-wrap: break-word; word-break: break-all; margin: 0;}
+    </style>
+  </head>
+  <body>
+    <p class="bottom" >=====================</p>
+    <p class="bottom" >=DATE = 22:29=</p>
+    <p class="bottom" >=+⌀ вилка&nbsp; стакан ⌀+=</p>
+    <p class="bottom" >=====================</p>
+    <img id="imgsrc" class="center" src="https://i.pinimg.com/736x/c8/21/77/c82177f13117f94191f76ff421b4e68d.jpg"/>
+    <p class="dewrap" id="text">take a look at him. is smol.</p>
+    <p class="bottom" >=====================</p>
+    <p class="bottom" >=⌀ https://vlk.st/ ⌀=</p>
+    <p class="bottom" >=====================</p>
+  </body>
+  <script type="text/javascript">
+    const currentDate = new Date();
+const currentDateString = currentDate.toLocaleDateString('en-GB', {day: '2-digit', month: 'short', year: 'numeric', separator: ' '});
+const currentTimeString = currentDate.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', 'hourCycle': 'h24'});
+
+const dateElements = document.querySelectorAll('.bottom');
+
+dateElements.forEach(element => {
+  if (element.textContent.includes('DATE')) {
+    element.textContent = element.textContent.replace('DATE', currentDateString);
+  }
+  if (element.textContent.includes('22:29')) {
+    element.textContent = element.textContent.replace(/\d\d:\d\d/, currentTimeString);
+  }
+});
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+
+
+const imgSrc = urlParams.get('img')
+const text = urlParams.get('text');
+
+if (imgSrc=='') {
+  document.getElementById("imgsrc").outerHTML="";
+} else {
+  document.getElementById("imgsrc").src=imgSrc;
+}
+
+document.getElementById("text").innerHTML=text;
+
+
+
+  </script>
+  
+</html>

@@ -30,21 +30,10 @@ a {color: #4C4AC2;} a:hover {color: black;} a:visited {color: #4C4AC2;} a:visite
 .card { padding: 0rem; }
 
 
-@media (max-width: 640px) { 
+@media (max-width: 900px) { 
 	.cards-2-1, .cards-1, .cards-1-2 { display: grid; grid-template-columns: 1fr; grid-auto-rows: auto; grid-gap: 0rem; } 
 	.green, .what {font-size: 22px; border:none;}
 	.inner {padding: 0px 20px;}
 	body {font-size: 22px; line-height: 37px;}
 	.nomob {display: none;}
 }
-
-/*
-@media (max-width: 850px) {
-.bio-back {background: white; color: black; width: 100%;}
-.bio-back:hover {background: white; color: black; width: 100%;}
-.bio-text {padding: 16px;}
-}
-@media (min-width: 2500px) {.soundcloud {display: none}}
-@media (max-width: 500px) {.soundcloud {display: none} #telegram img {width: 128px !important;} .marq {animation-duration: 160s;} .marq {animation-duration: 90s;} @keyframes dvdx {0%,100% {transform: translateX(0%);}50% {transform: translateX(calc(100% - 128px));}} @keyframes dvdy {0%,100% {transform: translateY(0%);}50% {transform: translateY(calc(100% - 92px));}}}
-@media (min-width:350px) and (max-width:430px) {h1 {font-size: 40px} dark-mode-toggle {--dark-mode-toggle-icon-size: 30px; transform: translateY(8px);}}
-@media (max-width: 349px) {h1 {font-size: 28px} h2 {font-size: 18px} dark-mode-toggle {--dark-mode-toggle-icon-size: 20px; transform: translateY(5px);}*/

@@ -5,7 +5,6 @@ html { font-family: 'Inter', sans-serif; overflow-x: hidden; padding: 0;}
 body {font-family: 'Inter', sans-serif; overflow-x: hidden; font-size: 14px; background: #9AC3FF; padding: 0; margin: 0 !important;}
 
 a {color: #4C4AC2;} a:hover {color: black;} a:visited {color: #4C4AC2;} a:visited:hover {color: black;}
-
 .logo {background: white; border-radius: 2rem; width: auto; min-height:200px; background-image: url('./vilk-tag.svg'); background-size: 100% 100%; margin: 3px; background-position: center; background-repeat: no-repeat;} 
 .sq {margin: 3px;} 
 .white {background: white; border-radius: 2rem; margin: 3px;} 
@@ -15,12 +14,8 @@ a {color: #4C4AC2;} a:hover {color: black;} a:visited {color: #4C4AC2;} a:visite
 .projects {background: white; border-radius: 2rem; margin: 3px; font-size: 24px; line-height: 37px;}
 .crypto {background: #6898DF; border-radius: 2rem; margin: 3px; color: white}
 .crypto a {color: white;}
-
 .inner {padding: 10px 30px;}
-
 .violet {background-color: #C5C4F1;}
-
- 
 .this {max-width: 900px; margin: 20px auto;}
 
 .cards-2-1 { display: grid; grid-template-columns: 2fr 1fr; grid-auto-rows: auto; grid-gap: 0rem; }

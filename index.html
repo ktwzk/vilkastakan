@@ -55,7 +55,7 @@
         <div class="green card">
           <div class="inner">
             <p>you can listen to my music on <a href="https://open.spotify.com/artist/5HvELTEdaQ0linaDxb8Sls?si=kdEeByOBSfC62bN1JdMryQ">spotify</a> and&nbsp;<a href="https://soundcloud.com/vilkastakan">soundcloud</a></p>
-            <p><div id="spotify-paragraph">&nbsp;</div></p>
+            <!-- <p><div id="spotify-paragraph">&nbsp;</div></p> -->
           </div>
         </div>
       </div>
@@ -105,14 +105,26 @@
             <p>font on logo: <a href="https://hsedesignlab.ru/hsefonts">Baymax by Ilona Kuzina</a></p>
             <p>web font: <a href="https://rsms.me/inter/">Inter by Rasmus Andersson</a></p>
             <p>———</p>
-            <p>last update: <nobr>05 Jan 2023</nobr></p>
+            <p>last update: <nobr>11 Aug 2023</nobr></p>
           </div>
         </div>
       </div>
     </div>
   </body>
-  <script>
-  const spotify = (text) => {if (text=='paused'||text=='⚠️ Error, try again later') {document.getElementById("spotify-paragraph").outerHTML = "";} else {document.getElementById("spotify-paragraph").innerHTML = 'right now i\'m listening to <span id="spotify">' + text + '</span>'}};
-  fetch('https://spotify-now-playing.glitch.me/api').then(response => response.text()).then(text => spotify(text));
-  </script>
+  <!-- <script>
+
+  const spotify = (data) => {
+  if (data == null) {
+    document.getElementById("spotify-paragraph").outerHTML = "";
+  } else {
+    document.getElementById("spotify-paragraph").innerHTML = 'right now i\'m listening to <span id="spotify">' + data.artists + ' — ' + data.track_name + '</span>';
+  }
+};
+
+fetch('https://spotify.vlk.st/currently-playing')
+  .then(response => response.json())
+  .then(data => spotify(data))
+  .catch(error => spotify(null));
+  
+  </script> -->
 </html>

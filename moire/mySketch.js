@@ -1,5 +1,7 @@
 let colors = [[13, 16, 27],[107, 35, 65],];
 
+p5.disableFriendlyErrors = true;
+
 function setup() {
 	createCanvas(windowWidth, windowHeight, WEBGL), pixelDensity(2), frameRate(12), createLoop({duration: 256}), animLoop.noiseFrequency(0.1);
 }
@@ -32,6 +34,8 @@ function draw() {
 	translate(0,0,0);
 	
     pop();
+
+
 }
 
 function dS(e, o, c) {

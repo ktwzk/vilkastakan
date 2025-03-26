@@ -6,11 +6,9 @@
     <title>вилка стакан</title>
     <link href="common.css?v=3" rel="stylesheet">
     
-    <!-- Meta tags -->
     <meta name="keywords" content="вилка стакан, вилкастакан, vilkastakan, vilka stakan, ktwzk, kotwizkiy, Викентий Котвицкий, Вик Котвицкий, Vik Kotwizkiy, Vincent Kotwizkiy, Vik Ktwzk, Вик Ктвцк, Котвицкий Викентий Борисович, вилк, vilk, vlkst">
     <meta name="description" content="vilka stakan is an internet magician">
     
-    <!-- Open Graph -->
     <meta property="og:site_name" content="vilka stakan">
     <meta property="og:title" content="вилка стакан">
     <meta property="og:image" content="http://vlk.st/ogp.png">
@@ -23,11 +21,9 @@
     <meta property="og:locale" content="en_US">
     <meta property="og:description" content="vilka stakan is an internet magician">
     
-    <!-- Twitter Card -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:image" content="https://vlk.st/ogp.png">
     
-    <!-- Favicons -->
     <link rel="image_src" href="https://vlk.st/ogp.png">
     <link rel="canonical" href="https://vlk.st/">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -52,7 +48,6 @@
         }
     </script>
     
-    <!-- External Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@idotj/mastodon-embed-timeline@4.4.2/dist/mastodon-timeline.umd.js" 
             crossorigin="anonymous" 
             integrity="sha256-E6WPG6iq+qQIzvu3HPJJxoAeRdum5siq13x4ITjyxu8=">
@@ -85,6 +80,8 @@
     
     <p>my&nbsp;real name is&nbsp;<abbr title="Викентий Котвицкий">Vikentiy</abbr>, but you can call me&nbsp;Vik or&nbsp;Vilk. currently, i&rsquo;m having fun and available for hire on&nbsp;your projects &#3366;&#3405;&#3366;&#3391;(&#757;&bull;&#768;&#7447;-&#757;)&#10023;</p>
 
+    <h2>feed ···</h2>
+
     <div class="fedi-share fedi-share-lg">
         <div class="dummy-container">
             <div class="mt-timeline" id="mt-timeline">
@@ -96,8 +93,8 @@
     </div>
 
     <p>also you can follow me 
-        <a href="https://x.com/vilkastakan">on x</a>, 
-        <a href="https://t.me/vilkastakan">в телеграме</a>, 
+        <a href="https://bsky.app/profile/vlk.st">on bluesky</a>, 
+        <a href="https://vilkastakan.t.me/">в телеграме</a>, 
         <a href="https://www.youtube.com/@vilkastakan">youtube</a>, 
         <a href="https://open.spotify.com/artist/5HvELTEdaQ0linaDxb8Sls">spotify</a> or 
         <a href="https://soundcloud.com/vilkastakan">soundcloud</a>
@@ -116,7 +113,7 @@
         <a href="https://ktwzk.me/key.txt">ssh pubkey</a> just in case
     </p>
 
-    <p class="small">last update: 04 Mar 2025, Екатеринбург</p>
+    <p class="small">last update: 26 Mar 2025, Екатеринбург</p>
 
     <script>
         function cX() {
@@ -125,14 +122,7 @@
             return Math.floor(l % 360)
         }
         let x = cX();
-        if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-            document.body.style.background = `hsl(${x}, 30%, 10%)`;
-        } else {
-            document.body.style.background = `hsl(${x}, 30%, 80%)`;
-            document.querySelectorAll(".me").forEach(e => {
-                e.style.filter = "invert(1)";
-            });
-        }
+        document.body.style.background = `hsl(${x}, 30%, 10%)`;
 
     </script>
     <script src="./masto.js?v=3"></script>

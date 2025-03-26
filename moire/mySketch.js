@@ -4,7 +4,7 @@ let colors = [
 ];
 
 function setup() {
-	createCanvas(windowWidth, windowHeight, WEBGL), pixelDensity(2), frameRate(30), createLoop({duration: 16}), animLoop.noiseFrequency(0.3)
+	createCanvas(windowWidth, windowHeight, WEBGL), pixelDensity(2), frameRate(30), createLoop({duration: 256}), animLoop.noiseFrequency(0.1)
 }
 
 function draw() {
@@ -17,7 +17,7 @@ function draw() {
 		  dS(colors[o], 1, 2),
 		pop();
 	translate(0,0,100), rotateX(0), rotateY(0);
-	dS([206, 217, 236], 2, 0.01);
+	dS([206, 217, 236], map(animLoop.noise({radius: 5}), 0, 1, 1, 1.75), 0.25);
 }
 
 function dS(e, o, c) {

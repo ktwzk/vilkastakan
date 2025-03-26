@@ -1,27 +1,23 @@
-let colors = [
-[13, 16, 27],
-[107, 35, 65],
-];
+let colors = [[13, 16, 27],[107, 35, 65],];
 
 function setup() {
-	createCanvas(windowWidth, windowHeight, WEBGL), pixelDensity(2), frameRate(30), createLoop({duration: 256}), animLoop.noiseFrequency(0.4);
+	createCanvas(windowWidth, windowHeight, WEBGL), pixelDensity(2), frameRate(12), createLoop({duration: 256}), animLoop.noiseFrequency(0.1);
 }
 
 function draw() {
 	background(238, 36, 61);
-	let e = PI / 36;
+	let mA = PI / 24;
 	for (let o = 0; o < 2; o++) 
 		push(), 
 	      resetMatrix(),
-		  rotateX(map(animLoop.noise({seed: o*3}), 0, 1, -e, e)),
-		  rotateZ(map(animLoop.noise({seed: o*5}), 0, 1, -e, e)),
-		  dS(colors[o], 1, 2),
+		  rotateX(map(animLoop.noise({seed: o*3}), 0, 1, -mA, mA)),
+		  rotateZ(map(animLoop.noise({seed: o*5}), 0, 1, -mA, mA)),
+		  dS(colors[o], 1, 1),
 		pop();
-	resetMatrix();
-	translate(0,0,0), rotateX(map(animLoop.noise({radius:1}), 0, 1, -PI/24, PI/24)), rotateY(0);
-	dSA([40, 26, 45], [175, 39, 71], map(animLoop.noise({radius:1}), 0, 1, 0, 2), height);
+	resetMatrix(), translate(0,0,0), rotateX(map(animLoop.noise({radius:0.1}), -1, 1, -mA, mA));
+	dSA([40, 26, 45], [175, 39, 71], map(animLoop.noise({radius:0.1}), -1, 1, 1, 2), height);
 	
-    let pereklad = map(animLoop.noise({radius: 0.1}), -1, 1, -width/2, width/2);
+    let pereklad = map(animLoop.noise({radius: 0.05}), -1, 1, -width/2, width/2);
 
 	push();
 	stroke(13, 16, 27);
@@ -40,18 +36,36 @@ function draw() {
 
 function dS(e, o, c) {
 	stroke(e), strokeWeight(o);
-	for (let e = 1 * -width; e < 1 * width; e += 2.5) line(e, c * -height, e, c * height)
+	beginShape(LINES);
+	  for (let x = -width; x < width; x += 2.5) {
+	    vertex(x, -c * height);
+	    vertex(x, c * height);
+	  }
+	  endShape();
 }
 
 
 function dSA(p, p2, o, q) {
-	let alt = true;
-	stroke(p), strokeWeight(o);
-	for (let e = 1 * -width; e < 1 * width; e += 2.5) {
-	 if (alt) {stroke(p)} else {stroke(p2)}; 
-     line(e, -q, e, q);
-     alt = !alt;
+  strokeWeight(o);
+  stroke(p);
+  beginShape(LINES);
+  for (let e = -width; e < width; e += 2.5) {
+    if (e % 5 === 0) {
+      vertex(e, -q);
+      vertex(e, q);
     }
+  }
+  endShape();
+
+  stroke(p2);
+  beginShape(LINES);
+  for (let e = -width; e < width; e += 2.5) {
+    if (e % 5 !== 0) {
+      vertex(e, -q);
+      vertex(e, q);
+    }
+  }
+  endShape();
 }
 
 function windowResized(){

@@ -1,7 +1,7 @@
 let particles = [];
 const particleCount = 2025;
 const diffusionRate = 0.2025;
-let leftColor, rightColor;
+let leftColor, rightColor, thirdColor;
 let vignetteRadius;
 
 function setup() {
@@ -9,12 +9,13 @@ function setup() {
   pixelDensity(2);
   frameRate(25);
   noStroke();
-  background(0);
+  
 
-  vignetteRadius = windowWidth / 4;
+  vignetteRadius = min(windowHeight,windowWidth)/2 - 10;
   leftColor = color(random(255), random(255), random(255), 127);
-  rightColor = invertColor(leftColor);
-
+  rightColor = color(random(255), random(255), random(255), 127); //invertColor(leftColor);
+  thirdColor = makeThirdColor(leftColor, rightColor)
+  background(thirdColor);
 
    for (let i = 0; i < particleCount; i++) {
     let angleLeft = random(TWO_PI);
@@ -54,7 +55,7 @@ function setup() {
 
 
 function draw() {
-  fill(0, 5); 
+  fill(red(thirdColor), green(thirdColor), blue(thirdColor), 2); 
   rect(0, 0, width, height);
 
   for (let i = 0; i < particles.length; i++) {
@@ -83,4 +84,9 @@ function draw() {
 
 function invertColor(c) {
   return color(255 - red(c), 255 - green(c), 255 - blue(c), 127);
+}
+
+
+function makeThirdColor(c1, c2) {
+  return color((red(c1)+red(c2))/2, (green(c1)+green(c2))/2, (blue(c1)+blue(c2))/2);
 }

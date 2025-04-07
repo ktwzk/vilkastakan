@@ -1,9 +1,8 @@
-p5.disableFriendlyErrors = true;
-
 let particles = [];
 const particleCount = 2025;
 const diffusionRate = 0.2025;
 let leftColor, rightColor;
+let vignetteRadius;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -12,27 +11,52 @@ function setup() {
   noStroke();
   background(0);
 
+  vignetteRadius = windowWidth / 4;
   leftColor = color(random(255), random(255), random(255), 127);
   rightColor = invertColor(leftColor);
 
-  for (let i = 0; i < particleCount; i++) {
+
+   for (let i = 0; i < particleCount; i++) {
+    let angleLeft = random(TWO_PI);
+    let radiusLeft = random(vignetteRadius);
+    let xLeft = width / 2 + radiusLeft * cos(angleLeft);
+    let yLeft = height / 2 + radiusLeft * sin(angleLeft);
+
+    if (xLeft >= width / 2) {
+      xLeft = width / 2 - (windowWidth / 1000);
+    }
+
     particles.push({
-      x: random(0, width / 2),
-      y: random(height),
+      x: xLeft,
+      y: yLeft,
       color: leftColor,
       isLeft: true
     });
 
+    let angleRight = random(TWO_PI);
+    let radiusRight = random(vignetteRadius);
+    let xRight = width / 2 + radiusRight * cos(angleRight + PI);
+    let yRight = height / 2 + radiusRight * sin(angleRight + PI);
+
+
+    if (xRight <= width / 2) {
+      xRight = width / 2 +  (windowWidth / 1000);
+    }
+
     particles.push({
-      x: random(width / 2, width),
-      y: random(height),
+      x: xRight,
+      y: yRight,
       color: rightColor,
       isLeft: false
     });
   }
 }
 
+
 function draw() {
+  fill(0, 5); 
+  rect(0, 0, width, height);
+
   for (let i = 0; i < particles.length; i++) {
     const p = particles[i];
 
@@ -60,11 +84,3 @@ function draw() {
 function invertColor(c) {
   return color(255 - red(c), 255 - green(c), 255 - blue(c), 127);
 }
-
-
-function windowResized() {
-  
-  background(0);
-  resizeCanvas(windowWidth, windowHeight);
-}
-

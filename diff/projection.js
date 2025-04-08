@@ -11,12 +11,17 @@ function setup() {
   noStroke();
   background(0);
 
+  initParticles();
+}
+
+function initParticles(){
+  particles = [];
   vignetteRadius = min(windowHeight,windowWidth)/2 - 10;
   leftColor = color(random(255), random(255), random(255), 127);
   rightColor = invertColor(leftColor);
 
 
-   for (let i = 0; i < particleCount; i++) {
+  for (let i = 0; i < particleCount; i++) {
     let angleLeft = random(TWO_PI);
     let radiusLeft = random(vignetteRadius);
     let xLeft = width / 2 + radiusLeft * cos(angleLeft);
@@ -52,7 +57,6 @@ function setup() {
   }
 }
 
-
 function draw() {
   fill(0, 2); 
   rect(0, 0, width, height);
@@ -83,4 +87,17 @@ function draw() {
 
 function invertColor(c) {
   return color(255 - red(c), 255 - green(c), 255 - blue(c), 127);
+}
+
+function mousePressed() {
+  if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {
+    let fs = fullscreen();
+    fullscreen(!fs);
+  }
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  background(0);
+  initParticles();
 }

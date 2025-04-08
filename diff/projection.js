@@ -58,7 +58,7 @@ function initParticles(){
 }
 
 function draw() {
-  fill(0, 2); 
+  fill(0, 10); 
   rect(0, 0, width, height);
 
   for (let i = 0; i < particles.length; i++) {

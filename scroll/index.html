@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IMAGINEREST</title>
+  <style>
+*{margin:0;padding:0;box-sizing:border-box}body,html{height:100%;font-family:sans-serif;background-color:#C3C3C3}.masonry-container{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,2fr));grid-template-rows:masonry;gap:10px;padding:10px;position:relative;width:100%;overflow:hidden}.squircle{background-color:black;border-radius:15px;width:100%;color:#888888;padding:20px}.squircle:nth-of-type(97n+79){background:rgb(13,16,69);background:linear-gradient(0deg,rgba(13,16,69,1) 0%,rgba(251,79,248,1) 40%,rgba(239,239,239,1) 80%)}h1,p{padding:10px}h1{padding-bottom:0px}
+  </style>
+</head>
+<body>
+    <h1>IMAGINEREST</h1>
+    <p>Take your time to scroll through and imagine this images by yourself.</p>
+  <div class="masonry-container">
+  </div>
+
+  <script>
+    const masonryContainer = document.querySelector('.masonry-container');
+    const totalItems = 50;
+    const squircleWidth = 100;
+
+    function getRandomHeight() {
+        return Math.floor(Math.random() * (500 - 150) + 150);
+    }
+
+    function createSquircles() {
+        for (let i = 0; i < totalItems; i++) {
+            const squircle = document.createElement('div');
+            squircle.classList.add('squircle');
+            squircle.style.height = `${getRandomHeight()}px`;
+            squircle.innerHTML = generatePoeticSentence();
+            masonryContainer.appendChild(squircle);
+
+        }
+    }
+
+    function generatePoeticSentence() {
+        // A curated list of poetic words
+        const poeticWords = [
+            'retro', 'road', 'image', 'shelf', 'suffocate', 'quote', 'out of focus', 'flash', 'printed', 'art', 'captcha', 'credited', 'soft', 'sepia', 'sponsored', 'cookie', 'cropped', 'hang', 'neat', 'text', 'jitter', 'metrics', 'moon', 'hyperreal', 'aesthetic', 'reposted', 'tunnel', 'uncorrected', 'burnout', 'vehicle', 'coma', 'sky', 'overlay', 'shoulder', 'close up', 'unknown', 'dog', 'sidewalk', 'insect', 'carpal', 'ad', 'gloss', 'box', 'disconnect', 'cabinet', 'unverified', 'sculpture', 'laptop', 'flat lay', 'core', 'hard light', 'terminate', 'sparkle', 'kernel panic', 'organized', 'block', 'thumb', 'obscure', 'nausea', 'lurk', 'blurry', 'backlit', 'trend', 'striped', 'déjà vu', 'unrecognizable', 'overexpose', 'stolen', 'curated', 'vibe', 'tremor', 'REM', 'historical', 'jumping', 'shadowban', 'stem', 'refraction', 'cat', 'neon', 'touching', 'tracking', 'leaning', 'liminal', 'frowning', 'trending', 'fuzzy', 'compress', 'highlighted', 'selfie', 'unfiltered', 'high quality', 'underline', 'unretouched', 'gif', 'blue screen', 'voxel', 'fatigue', 'diagram', 'bold', 'null', 'grain', 'spreadsheet', 'dark', 'outdoors', 'algorithm', 'object', 'book cover', 'mainstream', 'tap', 'reel', 'scrolling', 'latency', 'holding', 'melt', 'pointcloud', 'unannotated', 'petal', 'popup', 'react', 'halo', 'painting', 'engagement', 'simulacra', 'pixel', 'reaching', 'unsigned', 'glowing', 'unframed', 'smiling', 'wave', 'cluttered', 'crossed out', 'typed', 'singularity', 'chair', 'drawing', 'bicycle', 'deepfake', 'firewall', 'monitor', 'artificial light', 'phone', 'graph', 'stutter', 'analog', 'pinch', 'standing', 'eye strain', 'aerial', 'legacy', 'daze', 'high resolution', 'monochrome', 'abstract', 'ceiling', 'fish', 'paranoia', 'filtered', 'scroll', 'staged', 'tick', 'tear', 'sharp', 'photo', 'running', 'bot', 'backup', 'timeout', 'bag', 'fold', 'dataset', 'overhead', 'crash', 'parse', 'still life', 'uncropped', 'undated', 'sunrise', 'tree', 'recognizable', 'buffer', 'pastel', 'low quality', 'sitting', 'color corrected', 'planned', 'timeline', 'compile', 'erode', 'saturation', 'candid', 'watermarked', 'twist', 'container', 'copyrighted', 'pushing', 'translucent', 'closeup', 'zoomed in', 'compressed', 'checksum', 'brutalist', 'top down', 'billboard', 'visible', 'weight', 'forgotten', 'perspective', 'unzip', 'urban', 'override', 'zoomed out', 'personalized', 'dejavu', 'handwritten', 'grayscale', 'relic', 'glossy', 'checkered', 'breadcrumb', 'matte', 'parameter', 'jpeg', 'cup', 'graffiti', 'leaves', 'bokeh', 'lettering', 'design', 'style', 'restore', 'famous', 'pulling', 'signed', 'transparency', 'pattern', 'freeze', 'oblivion', 'indoors', 'layer', 'warp', 'merge', 'table', 'organic', 'nature', 'fog', 'motion blur', 'time lapse', 'food', 'sleep', 'history', 'action shot', 'newspaper', 'trash', 'thumbnail', 'people', 'unmounted', 'obsolescence', 'dreamy', 'paralysis', 'anxiety', 'angle', 'polygon', 'verified', 'neck', 'blue hour', 'grainy', 'render', 'flicker', 'indoor', 'sun', 'keyboard', 'avatar', 'darkweb', 'wall', 'messy', 'zoom', 'doom', 'vertigo', 'side view', 'composition', 'segfault', 'countdown', 'collage', 'loop', 'silhouette', 'sketch', 'bias', 'consume', 'emoji', 'blackhole', 'pupil', 'amateur', 'profile', 'landscape', 'proxy', 'contemporary', 'boat', 'magazine', 'reblogged', 'root', 'execute', 'unclear', 'chaotic', 'encrypt', 'retina', 'shatter', 'burn', 'bending', 'schematic', 'border', 'utensil', 'delete', 'mute', 'distort', 'ocean', 'bright', '404', 'colorful', 'geotag', 'patterned', 'noisy', 'numb', 'shadow play', 'wireframe', 'bottle', 'full frame', 'edited', 'uncredited', 'boosted', 'back view', 'training', 'professional', 'reflection', 'spoof', 'label', 'phish', 'skip', 'datamosh', 'partial', 'golden hour', 'load', 'bed', 'y2k', 'furniture', 'superposition', 'pointing', 'original', 'shard', 'coffee', 'binge', 'share', 'licensed', 'footprint', 'fingerprint', 'opaque', 'typing', 'front view', 'expire', 'fractal', 'glitter', 'meme', 'scanline', 'recommended', 'banner', 'plane', 'refresh', 'hover', 'cache', 'fossil', 'window', 'river', 'decrypt', 'swipe', 'entangle', 'viral', 'textured', 'circadian', 'uncanny', 'logo', 'pixelated', 'saccade', 'shiny', 'bookmark', 'natural light', 'blink', 'brainrot', 'person', 'insomnia', 'underexposed', 'laughing', 'infinite', 'crosswalk', 'gesturing', 'artist', 'background', 'moodboard', 'metallic', 'analytics', 'breach', 'stamp', 'lag', 'screen', 'maximalist', 'artifacted', 'clear', 'dancing', 'smear', 'discover', 'spectre', 'hard', 'overexposed', 'luminous', 'favorite', 'glare', 'hashtag', 'night', 'authentic', 'crowd', 'car', 'forest', 'grass', 'mounted', 'macro', 'glitch', 'niche', 'static', 'reach', 'cyber', 'lamp', 'couch', 'building', 'hands', 'documentary', 'sunset', 'void', 'train', 'report', 'gradient', 'click', 'infamous', 'mountain', 'log', 'corrupt', 'real', 'nostalgia', 'melatonin', 'flyer', 'foreground', 'bird', 'erased', 'framed', 'metadata', 'impression', 'book', 'drown', 'watermark', 'wrist', 'decay', 'neural network', 'inference', 'timestamp', 'stars', 'screenshot', 'posed', 'copy', 'decode', 'door', 'fake', 'bus', 'lying', 'fork', 'original content', 'contrast', 'low resolution', 'spine', 'dissociate', 'street', 'strobe', 'light', 'AI', 'sign', 'wide shot', 'spontaneous', 'vintage', 'dated', 'quantum', 'artifact', 'italic', 'archive', 'long exposure', 'doodle', 'poster', 'explore', 'neutral', 'complete', 'cluster', 'digital', 'flower', 'micro', 'sidebar', 'wrapping', 'illustration', 'freeze frame', 'recycled', 'plate', 'meal', 'bottom up', 'polka dot', 'public domain', 'beach', 'annotated', 'blur', 'hologram', 'mouse', 'depth of field', 'mirror', 'fragment', 'city', 'faded', 'dread', 'story', 'minimalist', 'smeared', 'noise', 'overload', 'VPN', 'repost', 'leak', 'error', 'day', 'modern', 'filter', 'montage', 'dropped', 'bluelight', 'floor', 'shadow', 'gripping', 'soft light', 'slouch', 'animal', 'warm', 'forever', 'drag', 'hazy', 'face', 'clouds', 'reproduction', 'sticker', 'pen', 'feed', 'waving', 'clicking', 'sand', 'eternal', 'invisible', 'display', 'wormhole', 'font', 'paper', 'unwatermarked', 'retouched', 'smooth', 'embed', 'bleed', 'icon', 'chart', 'portrait', 'unedited', 'blurry background', 'cold'];
+
+
+        const wordCount = Math.floor(Math.random() * 7) + 4;
+        let sentence = [];
+        for (let i = 0; i < wordCount; i++) {
+            const randomIndex = Math.floor(Math.random() * poeticWords.length);
+            sentence.push(poeticWords[randomIndex]);
+        }
+        sentence[0] = sentence[0].charAt(0).toUpperCase() + sentence[0].slice(1);
+        return sentence.join(', ') + '.';
+    }
+
+    function infiniteScroll() {
+        const threshold = 200;
+        const lastSquircle = masonryContainer.lastElementChild;
+        const lastSquirclePosition = lastSquircle.getBoundingClientRect().bottom;
+
+        if (lastSquirclePosition < window.innerHeight + threshold) {
+            addMoreSquircles();
+        }
+
+        requestAnimationFrame(infiniteScroll);
+    }
+
+    function addMoreSquircles() {
+        for (let i = 0; i < 10; i++) {
+            const squircle = document.createElement('div');
+            squircle.classList.add('squircle');
+            squircle.style.height = `${getRandomHeight()}px`;
+            squircle.innerHTML = generatePoeticSentence();
+            masonryContainer.appendChild(squircle);
+        }
+    }
+
+    createSquircles();
+    infiniteScroll();
+  </script>
+</body>
+</html>

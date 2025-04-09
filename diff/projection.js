@@ -1,5 +1,5 @@
 let particles = [];
-const particleCount = 2025;
+const particleCount = 2025 * 2;
 const diffusionRate = 0.2025;
 let leftColor, rightColor;
 let vignetteRadius;
@@ -58,33 +58,59 @@ function initParticles(){
 }
 
 function draw() {
-  fill(0, 25); 
+  fill(0, Math.trunc(127/12)); 
   rect(0, 0, width, height);
 
   for (let i = 0; i < particles.length; i++) {
-    const p = particles[i];
-
-    p.x += random(-8, 8);
-    p.y += random(-1, 1);
+    let p = particles[i];
+    
+    if (width > height) {
+      p.x += random(-8, 8);
+      p.y += random(-1, 1);
+    }
+    else {
+      p.x += random(-1, 1);
+      p.y += random(-8, 8);
+    }
+    
+    
     p.x = constrain(p.x, 0, width);
     p.y = constrain(p.y, 0, height);
 
-    const crossedLeft = p.isLeft && p.x > width / 2;
-    const crossedRight = !p.isLeft && p.x < width / 2;
+    let crossedLeft = p.isLeft && p.x > width / 2;
+    let crossedRight = !p.isLeft && p.x < width / 2;
+    
+    let d = dist(p.x, p.y, width/2, height/2);
+    let crossedVignette = d > vignetteRadius;
 
-    if (crossedLeft || crossedRight) {
+    if (crossedLeft || crossedRight || crossedVignette) {
       if (random() < diffusionRate) {
-        p.isLeft = !p.isLeft;
+        if (crossedLeft || crossedRight) {
+          p.isLeft = !p.isLeft;
+        }
       } else {
-        p.x = crossedLeft ? width / 2 - 1 : width / 2 + 1;
+        if (crossedLeft || crossedRight) {
+          p.x = crossedLeft ? width / 2 - 1 : width / 2 + 1;
+        }
+        
+        if (crossedVignette) {
+          let angle = atan2(p.y - height/2, p.x - width/2);
+          p.x = width/2 + (vignetteRadius-8) * cos(angle);
+          p.y = height/2 + (vignetteRadius-8) * sin(angle);
+        }
       }
     }
 
     fill(p.color);
-    rect(p.x, p.y, 4, 1);
+    if (width > height) {
+      rect(p.x, p.y, 4, 1);
+    }
+    else {
+      rect(p.x, p.y, 1, 4);
+    }
+    
   }
 }
-
 function invertColor(c) {
   return color(255 - red(c), 255 - green(c), 255 - blue(c), 127);
 }

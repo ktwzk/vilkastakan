@@ -1,5 +1,5 @@
 let particles = [];
-const particleCount = 2025;
+const particleCount = 2025 * 2;
 const diffusionRate = 0.2025;
 let leftColor, rightColor, thirdColor;
 let vignetteRadius;
@@ -15,8 +15,11 @@ function setup() {
 
 function initColorsAndParticles() {
   vignetteRadius = min(windowHeight,windowWidth) / 2 - 10;
-  leftColor = color(random(255), random(255), random(255), 127);
-  rightColor = color(random(255), random(255), random(255), 127);
+  leftColor = color(random(150, 255), random(50, 150), random(0, 50), 127);
+  rightColor = color(random(0, 50), random(50, 150), random(150, 255), 127);
+  if (random(100) > 50) {
+    [leftColor, rightColor] = [rightColor, leftColor];
+  }
   thirdColor = makeThirdColor(leftColor, rightColor);
   background(thirdColor);
   
@@ -64,6 +67,14 @@ function draw() {
   for (let i = 0; i < particles.length; i++) {
     const p = particles[i];
 
+    if (width < height) {
+      p.x += random(-1, 1);
+      p.y += random(-8, 8);
+    } else {
+      p.x += random(-8, 8);
+      p.y += random(-1, 1);
+    }
+
     p.x += random(-8, 8);
     p.y += random(-1, 1);
     p.x = constrain(p.x, 0, width);
@@ -81,7 +92,12 @@ function draw() {
     }
 
     fill(p.color);
-    rect(p.x, p.y, 4, 1);
+    if (width < height) {
+      rect(p.x, p.y, 1, 4);
+    } else {
+      rect(p.x, p.y, 4, 1);
+    }
+    
   }
 }
 
@@ -90,9 +106,15 @@ function invertColor(c) {
 }
 
 function makeThirdColor(c1, c2) {
-  return color((red(c1)+red(c2))/2, (green(c1)+green(c2))/2, (blue(c1)+blue(c2))/2);
+  return color((red(c1)+red(c2))/4, (green(c1)+green(c2))/4, (blue(c1)+blue(c2))/4);
 }
 
 function mouseClicked() {
+  initColorsAndParticles();
+}
+
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
   initColorsAndParticles();
 }
